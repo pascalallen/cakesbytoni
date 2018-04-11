@@ -20,13 +20,29 @@
     	</div>
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="products">
-    	<div class="text-center">
-	    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    	<div class="col-4 mx-auto">
+    		<div class="image-container">
+				<img src="{{ asset('img/cake.jpg') }}" class="image">
+				<div class="overlay">
+					<a class="lead underline-hover" href="#cake">Cakes!</a>
+				</div>
+    		</div>
+    	</div>
+    	<div class="col-4 mx-auto">
+    		<div class="image-container">
+				<img src="{{ asset('img/cookie.jpg') }}" class="image">
+				<div class="overlay">
+					<div class="image-text"><a class="lead underline-hover" href="#cookie">Cookies!</a></div>
+				</div>
+    		</div>
+    	</div>
+    	<div class="col-4 mx-auto">
+    		<div class="image-container">
+				<img src="{{ asset('img/icecream.jpg') }}" class="image">
+				<div class="overlay">
+					<div class="image-text"><a class="lead underline-hover" href="#icecream">Ice Cream!</a></div>
+				</div>
+    		</div>
     	</div>
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="about">
