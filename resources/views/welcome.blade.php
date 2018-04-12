@@ -23,26 +23,26 @@
     	<div class="col-4 mx-auto">
     		<div class="image-container">
 				<img src="{{ asset('img/cake.jpg') }}" class="image">
-				<div class="overlay">
-					<a class="lead underline-hover" href="#cake">Cakes!</a>
+				<div class="text-container">
+					<a class="lead underline-hover image-text" href="#">Cakes</a>
 				</div>
     		</div>
     	</div>
     	<div class="col-4 mx-auto">
     		<div class="image-container">
 				<img src="{{ asset('img/cookie.jpg') }}" class="image">
-				<div class="overlay">
-					<div class="image-text"><a class="lead underline-hover" href="#cookie">Cookies!</a></div>
+				<div class="text-container">
+					<a class="lead underline-hover image-text" href="#">Cookies</a>
 				</div>
-    		</div>
+			</div>
     	</div>
     	<div class="col-4 mx-auto">
     		<div class="image-container">
 				<img src="{{ asset('img/icecream.jpg') }}" class="image">
-				<div class="overlay">
-					<div class="image-text"><a class="lead underline-hover" href="#icecream">Ice Cream!</a></div>
+				<div class="text-container">
+					<a class="lead underline-hover image-text" href="#">Ice Cream</a>
 				</div>
-    		</div>
+			</div>
     	</div>
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="about">
