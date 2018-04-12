@@ -22,7 +22,7 @@
 	<div class="row h-100 justify-content-center align-items-center" id="products">
     	<div class="col-4 mx-auto">
     		<div class="image-container">
-				<img src="{{ asset('img/cake.jpg') }}" class="image">
+				<img src="{{ asset('img/cake.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
 					<a class="lead underline-hover image-text" href="#">Cakes</a>
 				</div>
@@ -30,7 +30,7 @@
     	</div>
     	<div class="col-4 mx-auto">
     		<div class="image-container">
-				<img src="{{ asset('img/cookie.jpg') }}" class="image">
+				<img src="{{ asset('img/cookie.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
 					<a class="lead underline-hover image-text" href="#">Cookies</a>
 				</div>
@@ -38,7 +38,7 @@
     	</div>
     	<div class="col-4 mx-auto">
     		<div class="image-container">
-				<img src="{{ asset('img/icecream.jpg') }}" class="image">
+				<img src="{{ asset('img/icecream.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
 					<a class="lead underline-hover image-text" href="#">Ice Cream</a>
 				</div>
