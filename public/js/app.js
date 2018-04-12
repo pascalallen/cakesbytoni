@@ -10,7 +10,6 @@ $(window).scroll(function () {
 	//if you hard code, then use console
 	//.log to determine when you want the 
 	//nav bar to stick.  
-	console.log($(window).scrollTop())
 	if ($(window).scrollTop() > 280) {
 		$('.navbar').addClass('fixed-top');
 	}
@@ -18,3 +17,8 @@ $(window).scroll(function () {
 		$('.navbar').removeClass('fixed-top');
 	}
 });
+
+window.sr = ScrollReveal({ reset: true, duration: 1000 });
+sr.reveal('#cake', { origin: 'left', rotate: { z: 180 }, distance: '20vw', scale: 0.1 });
+sr.reveal('#cookie', { origin: 'bottom', rotate: { z: -180 }, distance: '20vw', scale: 0.1 });
+sr.reveal('#icecream', { origin: 'right', rotate: { z: 180 }, distance: '20vw', scale: 0.1 });

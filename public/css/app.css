@@ -2,6 +2,7 @@ body {
    	background-image: url("/img/memphis-colorful.png");
 	font-family: 'Amatic SC', cursive;
 	color: #567;
+	height: 100%;
 	/*font-family: 'Sacramento', cursive;*/
 	/*font-family: 'Cabin Sketch', cursive;*/
 }
