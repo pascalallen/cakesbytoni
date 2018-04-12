@@ -16,7 +16,9 @@
             @yield('content')
         </div>
         <script src="{{ asset('js/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
+        {{-- SCROLL REVEAL --}}
+        <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+        <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     </body>
 </html>
