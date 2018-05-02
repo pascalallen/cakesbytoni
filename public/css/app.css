@@ -1,10 +1,16 @@
 body {
-   	background-image: url("/img/memphis-colorful.png");
 	font-family: 'Amatic SC', cursive;
 	color: #567;
 	height: 100%;
+   	background-image: url("/img/memphis-colorful.png");
 	/*font-family: 'Sacramento', cursive;*/
 	/*font-family: 'Cabin Sketch', cursive;*/
+}
+
+.container{
+   	margin-top: 2vw;
+   	margin-bottom: 2vw;
+   	box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 .underline-hover {
