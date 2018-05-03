@@ -74,13 +74,40 @@
     	</div>
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="contact">
-    	<div class="text-center">
-	    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    	<div class="col">
+			<form id="contact-form">
+				<div class="form-inline">
+					<label for="first_name">First name</label>
+					<input type="text" class="form-control" id="first_name" name="first_name" placeholder="Enter first name">
+					<label for="last_name">Last name</label>
+					<input type="text" class="form-control" id="last_name" name="last_name" placeholder="Enter last name">
+				</div>
+				<div class="form-group">
+					<label for="email">Email address</label>
+					<input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+				</div>
+				<div class="form-group">
+					<label for="type">What</label>
+					<select class="form-control" id="type" name="type">
+						<option>Cake</option>
+						<option>Ice Cream</option>
+						<option>Ice Cream Cake</option>
+						<option>Cookies</option>
+						<option>Pie</option>
+						<option>Pastries</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="instructions">Special instructions</label>
+					<textarea class="form-control" id="instructions" name="instructions" rows="8"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="file">Attachment</label>
+					<input type="file" class="form-control-file" id="file" name="file">
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
     	</div>
     </div>
 @endsection
