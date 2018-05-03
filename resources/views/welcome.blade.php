@@ -24,7 +24,7 @@
     		<div class="image-container">
 				<img src="{{ asset('img/cake.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
-					<a class="lead underline-hover image-text" href="#">Cakes</a>
+					<a class="lead underline-hover image-text display-4" href="#">Cakes</a>
 				</div>
     		</div>
     	</div>
@@ -32,7 +32,7 @@
     		<div class="image-container">
 				<img src="{{ asset('img/cookie.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
-					<a class="lead underline-hover image-text" href="#">Cookies</a>
+					<a class="lead underline-hover image-text display-4" href="#">Cookies</a>
 				</div>
 			</div>
     	</div>
@@ -40,7 +40,7 @@
     		<div class="image-container">
 				<img src="{{ asset('img/icecream.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
-					<a class="lead underline-hover image-text" href="#">Ice Cream</a>
+					<a class="lead underline-hover image-text display-4" href="#">Ice Cream</a>
 				</div>
 			</div>
     	</div>
@@ -48,17 +48,29 @@
     		<div class="image-container">
 				<img src="{{ asset('img/pastry.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
-					<a class="lead underline-hover image-text" href="#">Pastries</a>
+					<a class="lead underline-hover image-text display-4" href="#">Pastries</a>
 				</div>
 			</div>
     	</div>
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="about">
     	<div class="text-center">
-    		<p class="display-2" id="vegan">Vegan</p>
-    		<p class="display-2" id="gmo">GMO free</p>
-    		<p class="display-2" id="gluten">Gluten free</p>
-    		<p class="display-2" id="organic">Organic</p>
+    		<div class="row" id="vegan" style="background-color: #274c77;">
+    			<h1 class="col-6">Vegan</h1>
+    			<img src="{{ asset('img/cow.svg') }}" class="col-6">
+    		</div>
+    		<div class="row" id="gmo" style="background-color: #a3cef1;">
+    			<img src="{{ asset('img/gmo.svg') }}" class="col-6">
+    			<h1 class="col-6">GMO free</h1>
+    		</div>
+    		<div class="row" id="gluten" style="background-color: #274c77;">
+    			<h1 class="col-6">Gluten free</h1>
+    			<img src="{{ asset('img/gluten.svg') }}" class="col-6">
+    		</div>
+    		<div class="row" id="organic" style="background-color: #a3cef1;">
+    		 	<img src="{{ asset('img/organic.svg') }}" class="col-6">
+    			<h1 class="col-6">Organic</h1>
+    		</div>
     	</div>
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="contact">
