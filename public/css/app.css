@@ -1,20 +1,21 @@
 body {
 	font-family: 'Amatic SC', cursive;
-	color: #567;
+	color: #E7ECEF;
 	height: 100%;
-   	background-image: url("/img/memphis-colorful.png");
+   	/*background-image: url("/img/memphis-colorful.png");*/
+	background-color: #6096BA;
 	/*font-family: 'Sacramento', cursive;*/
 	/*font-family: 'Cabin Sketch', cursive;*/
 }
 
 .underline-hover {
   position: relative;
-  color: #567;
+  color: #E7ECEF;
   text-decoration: none;
 }
 
 .underline-hover:hover {
-  color: #567;
+  color: #E7ECEF;
   text-decoration: none;
 }
 
@@ -25,7 +26,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #567;
+  background-color: #E7ECEF;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -68,11 +69,4 @@ body {
 
 .image-container:hover .text-container {
   opacity: 1;
-}
-
-.text {
-  background-color: #4CAF50;
-  color: white;
-  font-size: 16px;
-  padding: 16px 32px;
 }
