@@ -70,3 +70,8 @@ body {
 .image-container:hover .text-container {
   opacity: 1;
 }
+
+.icon{
+	width: 10%;
+	height: 10%;
+}
