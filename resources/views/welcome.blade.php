@@ -20,7 +20,7 @@
     	</div>
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="products">
-    	<div id="cake" class="col-4 mx-auto">
+    	<div id="cake" class="col-3 mx-auto">
     		<div class="image-container">
 				<img src="{{ asset('img/cake.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
@@ -28,7 +28,7 @@
 				</div>
     		</div>
     	</div>
-    	<div id="cookie" class="col-4 mx-auto">
+    	<div id="cookie" class="col-3 mx-auto">
     		<div class="image-container">
 				<img src="{{ asset('img/cookie.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
@@ -36,7 +36,7 @@
 				</div>
 			</div>
     	</div>
-    	<div id="icecream" class="col-4 mx-auto">
+    	<div id="icecream" class="col-3 mx-auto">
     		<div class="image-container">
 				<img src="{{ asset('img/icecream.jpg') }}" class="image rounded-circle image-fluid">
 				<div class="text-container">
@@ -44,15 +44,21 @@
 				</div>
 			</div>
     	</div>
+    	<div id="pastry" class="col-3 mx-auto">
+    		<div class="image-container">
+				<img src="{{ asset('img/pastry.jpg') }}" class="image rounded-circle image-fluid">
+				<div class="text-container">
+					<a class="lead underline-hover image-text" href="#">Pastries</a>
+				</div>
+			</div>
+    	</div>
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="about">
     	<div class="text-center">
-	    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    		<p class="display-2" id="vegan">Vegan</p>
+    		<p class="display-2" id="gmo">GMO free</p>
+    		<p class="display-2" id="gluten">Gluten free</p>
+    		<p class="display-2" id="organic">Organic</p>
     	</div>
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="contact">
