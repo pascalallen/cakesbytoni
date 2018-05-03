@@ -56,19 +56,19 @@
 	<div class="row h-100 justify-content-center align-items-center" id="about">
     	<div class="text-center">
     		<div class="row" id="vegan" style="background-color: #274c77;">
-    			<h1 class="col-6">Vegan</h1>
-    			<img src="{{ asset('img/cow.svg') }}" class="col-6">
+    			<h1 class="col-6 mx-auto">Vegan</h1>
+    			<img src="{{ asset('img/cow.svg') }}" class="col-6 mx-auto">
     		</div>
     		<div class="row" id="gmo" style="background-color: #a3cef1;">
-    			<img src="{{ asset('img/gmo.svg') }}" class="col-6">
-    			<h1 class="col-6">GMO free</h1>
+    			<img src="{{ asset('img/gmo.svg') }}" class="col-6 mx-auto">
+    			<h1 class="col-6 mx-auto">GMO free</h1>
     		</div>
     		<div class="row" id="gluten" style="background-color: #274c77;">
-    			<h1 class="col-6">Gluten free</h1>
-    			<img src="{{ asset('img/gluten.svg') }}" class="col-6">
+    			<h1 class="col-6 mx-auto">Gluten free</h1>
+    			<img src="{{ asset('img/gluten.svg') }}" class="col-6 mx-auto">
     		</div>
     		<div class="row" id="organic" style="background-color: #a3cef1;">
-    		 	<img src="{{ asset('img/organic.svg') }}" class="col-6">
+    		 	<img src="{{ asset('img/organic.svg') }}" class="col-6 mx-auto">
     			<h1 class="col-6">Organic</h1>
     		</div>
     	</div>
