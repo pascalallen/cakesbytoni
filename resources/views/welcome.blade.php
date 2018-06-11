@@ -75,12 +75,39 @@
     </div>
 	<div class="row h-100 justify-content-center align-items-center" id="contact">
     	<div class="text-center">
-	    	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	    	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	    	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	    	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	    	<h1>What do you need?</h1>
     	</div>
+    	{!! Form::open(array('action' => 'ContactController@method', 'files' => true, 'class' => 'form contact-form col-10')) !!}
+    		<div class="form-group">
+	    		{!! Form::label('email', 'E-Mail Address') !!}
+	    		{!! Form::text('email', 'example@gmail.com', array('class' => 'form-control')) !!}
+	    	</div>
+	    	<div class="form-group">
+	    		{!! Form::label('instructions', 'Instructions') !!}
+	    		{!! Form::textarea('instructions', 'Instructions', array('class' => 'form-control')) !!}
+    		</div>
+    		<div class="form-group">
+	    		{!! Form::file('image', array('class' => 'form-control-file')) !!}
+    		</div>
+    		<div class="form-group">
+	    		{!! Form::label('products', 'What do you want?') !!}
+	    		<br>
+	    		{!! 
+	    			Form::select('product', array(
+					    'Cakes' => array('chocolate' => 'Chocolate', 'vanilla' => 'Vanilla'),
+					    'Cookies' => array('chocolate' => 'Chocolate', 'peanut-butter' => 'Peanut Butter', 'sugar' => 'Sugar', 'm-and-m' => 'M & M'),
+					    'Ice Cream' => array('chocolate' => 'Chocolate', 'vanilla' => 'Vanilla', 'mint' => 'Mint'),
+					    'Pastries' => array('chocolate' => 'Chocolate', 'vanilla' => 'Vanilla', 'mint' => 'Mint'),
+					), array('class' => 'form-control')) 
+				!!}
+			</div>
+			<div class="form-group">
+				{!! Form::checkbox('name', '1', array('class' => 'form-check-input')) !!}
+				{!! Form::label('checkbox', 'loremasdadmsdfsasdfsdkdsfk') !!}
+			</div>
+			<div class="form-group">
+				{!! Form::submit('Send!', array('class' => 'btn btn-primary')) !!}
+			</div>
+		{!! Form::close() !!}
     </div>
 @endsection
