@@ -15,4 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/', 'ContactController@method');
+Route::post('/', 'OrderController@new');
