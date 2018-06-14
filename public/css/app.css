@@ -6,6 +6,7 @@ body {
 	background-color: #6096BA;
 	/*font-family: 'Sacramento', cursive;*/
 	/*font-family: 'Cabin Sketch', cursive;*/
+	font-size: 3vmin;
 }
 
 .underline-hover {
@@ -74,4 +75,9 @@ body {
 .icon{
 	width: 10%;
 	height: 10%;
+}
+
+#contact-form{
+	background-color: #274c77;
+	padding: 5%;
 }
