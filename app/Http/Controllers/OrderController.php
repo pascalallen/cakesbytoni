@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Order;
 use App\Mail\ThankYou;
+use App\Mail\NewOrder;
 use Illuminate\Support\Facades\Mail;
 
 class OrderController extends Controller
@@ -24,10 +25,10 @@ class OrderController extends Controller
     	$order->completed = 0;
     	$order->save();
 
-    	// $response = Mail::to($request->email)->send(new ThankYou($order));
-    	$response = Mail::to('thomaspascalallen@yahoo.com')->send(new ThankYou($order));
-    	var_dump($response);
-    	
+		Mail::to($request->email)->send(new ThankYou($order));
+		Mail::to('pascal@onlinemeded.org')->send(new NewOrder($order));
+		
+		
     	return view('welcome', ['order' => $request]);
     }
 }

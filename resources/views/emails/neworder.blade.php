@@ -98,14 +98,14 @@
         <div class="container">
             <div class="row h-100 justify-content-center align-items-center">
                 <div class="text-center">
-                    <h1 class="display-1">Thank You :)</h1>
-                    <p>Your delicious {{ $order->product }} is on it's way!</p>
+                    <h1 class="display-1">Yay! You have a new customer!</h1>
+                    <p>This cool guy wants a {{ $order->product }} :)</p>
                     <br>
-                    <h2>Here's what we got:</h2>
+                    <h2>Here's the deets:</h2>
                     <table class="table table-sm">
                         <thead>
                             <tr>
-                                <th scope="col">You</th>
+                                <th scope="col">Customer</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Product</th>
                                 <th scope="col">Instructions</th>
