@@ -28,3 +28,14 @@ sr.reveal('#vegan', { origin: 'right', rotate: { z: 180 }, distance: '20vw', sca
 sr.reveal('#gmo', { origin: 'left', rotate: { z: -180 }, distance: '20vw', scale: 0.1 });
 sr.reveal('#gluten', { origin: 'right', rotate: { z: 180 }, distance: '20vw', scale: 0.1 });
 sr.reveal('#organic', { origin: 'left', rotate: { z: -180 }, distance: '20vw', scale: 0.1 });
+
+$('#card').on('click',function() {
+	$(this).closest('.card').fadeOut();
+});
+
+$('#order-form').hide(); // hidden form on page load
+
+$(document).on('click', '#edit', function (event) {
+	$('#order-list').hide();
+	$('#order-form').show();
+ });
