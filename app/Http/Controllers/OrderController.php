@@ -26,7 +26,7 @@ class OrderController extends Controller
     	$order->save();
 
 		Mail::to($request->email)->send(new ThankYou($order));
-		Mail::to('pascal@onlinemeded.org')->send(new NewOrder($order));
+		Mail::to('tstewart13311@gmail.com')->send(new NewOrder($order));
 		
 		
     	return view('welcome', ['order' => $request]);
