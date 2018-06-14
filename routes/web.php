@@ -11,8 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/', 'Controller@home');
 Route::post('/', 'OrderController@new');
+Route::get('/orders/{uniqid}', 'OrderController@find'); // show
+Route::post('/orders/{uniqid}', 'OrderController@update'); // update

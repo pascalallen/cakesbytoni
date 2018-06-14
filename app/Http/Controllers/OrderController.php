@@ -22,13 +22,39 @@ class OrderController extends Controller
     	$order->price = 0;
     	$order->image = $request->image;
     	$order->product = $request->product;
-    	$order->completed = 0;
+		$order->completed = 0;
+		$order->unique_id = uniqid();
     	$order->save();
 
-		Mail::to($request->email)->send(new ThankYou($order));
-		Mail::to('tstewart13311@gmail.com')->send(new NewOrder($order));
+		// Mail::to($request->email)->send(new ThankYou($order));
+		Mail::to(env('ADMIN_EMAIL'))->send(new NewOrder($order));
 		
-		
-    	return view('welcome', ['order' => $request]);
+    	return redirect()->action(
+			'OrderController@find', ['uniqid' => $order->unique_id]
+		);
+	}
+
+    public function find($uniqid)
+    {
+		$order = Order::where('unique_id', $uniqid)->first();
+
+		if (!$order) {
+			return redirect()->action('Controller@home');
+		}
+
+    	return view('orders.show', ['order' => $order]);
+	}
+
+	public function update(Request $request, $uniqid)
+    {
+		$order = Order::where('unique_id', $uniqid)->first();
+
+		if (!$order) {
+			return redirect()->action('Controller@home');
+		}
+
+		$order->update($request->all());
+
+    	return view('orders.show', ['order' => $order]);
     }
 }
