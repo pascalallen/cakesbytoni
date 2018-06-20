@@ -7,22 +7,22 @@
 		<div class="text-center">
 			<h1 class="display-1">Cakes By Toni</h1>
 			<div class="row navbar">
-			<div class="col-4">
-			<a class="lead underline-hover" href="#products">Products</a>
-			</div>
-			<div class="col-4">
-			<a class="lead underline-hover" href="#about">About</a>
-			</div>
-			<div class="col-4">
-			<a class="lead underline-hover" href="#contact">Contact</a>
-			</div>
+				<div class="col-4">
+					<a class="lead underline-hover" href="#products">Products</a>
+				</div>
+				<div class="col-4">
+					<a class="lead underline-hover" href="#about">About</a>
+				</div>
+				<div class="col-4">
+					<a class="lead underline-hover" href="#contact">Contact</a>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="row h-100 justify-content-center align-items-center" id="products">
 		<div id="cake" class="col-3 mx-auto">
 			<div class="image-container">
-				<img src="{{ asset('img/cake.jpg') }}" class="image rounded-circle image-fluid">
+				<img src="https://imgur.com/{{ $cakeImage->imgur_id }}.jpg" class="image image-fluid">
 				<div class="text-container">
 					<a class="lead underline-hover image-text display-4" href="#">Cakes</a>
 				</div>
@@ -30,7 +30,7 @@
 		</div>
 		<div id="cookie" class="col-3 mx-auto">
 			<div class="image-container">
-				<img src="{{ asset('img/cookie.jpg') }}" class="image rounded-circle image-fluid">
+				<img src="{{ asset('img/cookie.jpg') }}" class="image image-fluid">
 				<div class="text-container">
 					<a class="lead underline-hover image-text display-4" href="#">Cookies</a>
 				</div>
@@ -38,17 +38,17 @@
 		</div>
 		<div id="icecream" class="col-3 mx-auto">
 			<div class="image-container">
-				<img src="{{ asset('img/icecream.jpg') }}" class="image rounded-circle image-fluid">
+				<img src="{{ asset('img/icecream.jpg') }}" class="image image-fluid">
 				<div class="text-container">
 					<a class="lead underline-hover image-text display-4" href="#">Ice Cream</a>
 				</div>
 			</div>
 		</div>
-		<div id="pastry" class="col-3 mx-auto">
+		<div id="cupcake" class="col-3 mx-auto">
 			<div class="image-container">
-				<img src="{{ asset('img/pastry.jpg') }}" class="image rounded-circle image-fluid">
+				<img src="https://imgur.com/{{ $cupcakesImage->imgur_id }}.jpg" class="image image-fluid">
 				<div class="text-container">
-					<a class="lead underline-hover image-text display-4" href="#">Pastries</a>
+					<a class="lead underline-hover image-text display-4" href="#">Cupcakes</a>
 				</div>
 			</div>
 		</div>
@@ -113,7 +113,7 @@
 						'Cakes' => array('chocolateCake' => 'Chocolate', 'vanillaCake' => 'Vanilla'),
 						'Cookies' => array('chocolateCookies' => 'Chocolate', 'peanutButterCookies' => 'Peanut Butter', 'sugarCookies' => 'Sugar', 'mAndMCookies' => 'M & M'),
 						'Ice Cream' => array('chocolateIceCream' => 'Chocolate', 'vanillaIceCream' => 'Vanilla', 'mintIceCream' => 'Mint'),
-						'Pastries' => array('chocolatePastries' => 'Chocolate', 'vanillaPastries' => 'Vanilla', 'mintPastries' => 'Mint'),
+						'Cupcakes' => array('chocolateCupcakes' => 'Chocolate', 'vanillaCupcakes' => 'Vanilla', 'mintCupcakes' => 'Mint'),
 						'Other'
 					), array('class' => 'form-control')) 
 				!!}
