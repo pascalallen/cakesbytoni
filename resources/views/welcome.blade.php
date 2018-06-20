@@ -3,6 +3,15 @@
 @section('title')Welcome :)@endsection
 
 @section('content')
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 	<div class="row h-100 justify-content-center align-items-center">
 		<div class="text-center">
 			<h1 class="display-1">Cakes By Toni</h1>
