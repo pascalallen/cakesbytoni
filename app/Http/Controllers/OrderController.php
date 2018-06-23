@@ -75,13 +75,13 @@ class OrderController extends Controller
     	return view('orders.show', ['order' => $order]);
 	}
 	
-	public function getCheckout()
-	{
+	// public function getCheckout()
+	// {
 		
-	}
+	// }
 
-	public function postCheckout(Request $request)
-	{
+	// public function postCheckout(Request $request)
+	// {
 		// $validator = Validator::make($request->all(), [
 		// 	'card_no' => 'required',
 		// 	'ccExpiryMonth' => 'required',
@@ -148,5 +148,5 @@ class OrderController extends Controller
 		// 		return redirect()->route('addmoney.paywithstripe');
 		// 	}
 		// }
-	}
+	// }
 }
