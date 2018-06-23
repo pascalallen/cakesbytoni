@@ -15,49 +15,52 @@
 	<div class="row h-100 justify-content-center align-items-center">
 		<div class="text-center">
 			<h1 class="display-1">Cakes By Toni</h1>
-			<div class="row navbar">
-				<div class="col-4">
+			<nav class="row navbar navbarScroll">
+				<div class="col-3">
 					<a class="lead underline-hover" href="#products">Products</a>
 				</div>
-				<div class="col-4">
+				<div class="col-3">
 					<a class="lead underline-hover" href="#about">About</a>
 				</div>
-				<div class="col-4">
+				<div class="col-3">
 					<a class="lead underline-hover" href="#contact">Contact</a>
 				</div>
-			</div>
+				<div class="col-3">
+					<a class="lead underline-hover" href="/gallery">Gallery</a>
+				</div>
+			</nav>
 		</div>
 	</div>
 	<div class="row h-100 justify-content-center align-items-center" id="products">
 		<div id="cake" class="col-3 mx-auto">
 			<div class="image-container">
-				<img src="https://imgur.com/{{ $cakeImage->imgur_id }}.jpg" class="image image-fluid">
+				<img src="https://imgur.com/{{ $cakeImage->imgur_id }}.jpg" class="image img-fluid rounded">
 				<div class="text-container">
-					<a class="lead underline-hover image-text display-4" href="#">Cakes</a>
+					<a class="lead underline-hover image-text" href="/gallery">Cakes</a>
 				</div>
 			</div>
 		</div>
 		<div id="cookie" class="col-3 mx-auto">
 			<div class="image-container">
-				<img src="{{ asset('img/cookie.jpg') }}" class="image image-fluid">
+				<img src="{{ asset('img/cookie.jpg') }}" class="image img-fluid rounded">
 				<div class="text-container">
-					<a class="lead underline-hover image-text display-4" href="#">Cookies</a>
+					<a class="lead underline-hover image-text" href="/gallery">Cookies</a>
 				</div>
 			</div>
 		</div>
 		<div id="icecream" class="col-3 mx-auto">
 			<div class="image-container">
-				<img src="{{ asset('img/icecream.jpg') }}" class="image image-fluid">
+				<img src="{{ asset('img/icecream.jpg') }}" class="image img-fluid rounded">
 				<div class="text-container">
-					<a class="lead underline-hover image-text display-4" href="#">Ice Cream</a>
+					<a class="lead underline-hover image-text" href="/gallery">Ice Cream</a>
 				</div>
 			</div>
 		</div>
 		<div id="cupcake" class="col-3 mx-auto">
 			<div class="image-container">
-				<img src="https://imgur.com/{{ $cupcakesImage->imgur_id }}.jpg" class="image image-fluid">
+				<img src="https://imgur.com/{{ $cupcakesImage->imgur_id }}.jpg" class="image img-fluid rounded">
 				<div class="text-container">
-					<a class="lead underline-hover image-text display-4" href="#">Cupcakes</a>
+					<a class="lead underline-hover image-text" href="/gallery">Cupcakes</a>
 				</div>
 			</div>
 		</div>
@@ -127,10 +130,10 @@
 					), array('class' => 'form-control')) 
 				!!}
 			</div>
-			<div class="form-group">
+			<!-- <div class="form-group">
 				{!! Form::label('checkboxLabel', 'loremasdadmsdfsasdfsdkdsfk') !!}
 				{!! Form::checkbox('name', '1', array('class' => 'form-check-input')) !!}
-			</div>
+			</div> -->
 			<div class="form-group">
 				{!! Form::submit('Send!', array('class' => 'btn btn-primary')) !!}
 			</div>

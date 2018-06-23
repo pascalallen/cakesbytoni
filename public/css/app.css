@@ -6,7 +6,8 @@ body {
 	background-color: #6096BA;
 	/*font-family: 'Sacramento', cursive;*/
 	/*font-family: 'Cabin Sketch', cursive;*/
-	font-size: 3vmin;
+  font-size: 3vmin;
+  padding-top: 70px;
 }
 
 .underline-hover {
@@ -51,6 +52,10 @@ body {
   width: 100%;
   transition: .5s ease;
   backface-visibility: hidden;
+}
+
+.image-padding {
+  padding:0.6em;
 }
 
 .text-container {

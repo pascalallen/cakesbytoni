@@ -17,4 +17,14 @@ class Controller extends BaseController
         $cupcakesImage = Image::where([['category_id', 2],['main', 1]])->first();
         return view('welcome', ['cakeImage' => $cakeImage, 'cupcakesImage' => $cupcakesImage]);
     }
+
+    public function gallery(){
+        $images = Image::all();
+        return view('gallery', ['images' => $images]);
+    }
+
+    public function imageView($id){
+        $image = Image::find($id);
+        return view('image-view', ['image' => $image]);
+    }
 }
