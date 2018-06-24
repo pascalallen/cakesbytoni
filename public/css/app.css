@@ -7,7 +7,15 @@ body {
 	/*font-family: 'Sacramento', cursive;*/
 	/*font-family: 'Cabin Sketch', cursive;*/
   font-size: 3vmin;
+}
+
+.container {
   padding-top: 70px;
+}
+
+#my-canvas {
+  position: absolute;
+  height: 100%;
 }
 
 .underline-hover {

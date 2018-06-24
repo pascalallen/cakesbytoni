@@ -39,6 +39,6 @@ $(document).on('click', '#edit', function (event) {
 	$('#order-form').show();
  });
 
-//  var confettiSettings = { target: 'my-canvas' };
-//  var confetti = new ConfettiGenerator(confettiSettings);
-//  confetti.render();
+ var confettiSettings = { target: 'my-canvas' };
+ var confetti = new ConfettiGenerator(confettiSettings);
+ confetti.render();
