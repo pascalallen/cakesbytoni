@@ -9,13 +9,13 @@ body {
   font-size: 3vmin;
 }
 
-.container {
-  padding-top: 70px;
-}
-
 #my-canvas {
   position: absolute;
   height: 100%;
+}
+
+.navContainer {
+  margin-bottom: 70px;
 }
 
 .underline-hover {

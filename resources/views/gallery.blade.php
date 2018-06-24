@@ -3,7 +3,7 @@
 @section('title')Gallery :)@endsection
 
 @section('content')
-    <div class="row justify-content-center align-items-center">
+    <div class="row justify-content-center align-items-center navContainer">
 		<div class="text-center">
 			<nav class="row navbar fixed-top">
 				<div class="col-3">
