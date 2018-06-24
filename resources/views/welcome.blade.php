@@ -14,7 +14,7 @@
 	@endif
 	<div class="row h-100 justify-content-center align-items-center">
 		<div class="text-center">
-			<h1 class="display-1">Cakes By Toni</h1>
+			<h1 class="display-1 pageHeader rounded">Cakes By Toni</h1>
 			<nav class="row navbar navbarScroll">
 				<div class="col-3">
 					<a class="lead underline-hover" href="#products">Products</a>

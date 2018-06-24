@@ -9,6 +9,19 @@ body {
   font-size: 3vmin;
 }
 
+.pageHeader {
+  background-color: #274c77;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
+.navbarScroll {
+  border-top-style: solid;
+  border-top-color: #a3cef1;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
+}
+
 #my-canvas {
   position: absolute;
   height: 100%;
