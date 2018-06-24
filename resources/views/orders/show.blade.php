@@ -50,9 +50,10 @@
             <div class="card mx-auto bg-success mt-5 fixed-top" style="max-width: 18rem;">
                 <div class="card-header">Success!<span class="float-right clickable cursor-pointer" id="card" data-effect="fadeOut"><i class="fa fa-times"></i></span></div>
                 <div class="card-body">
-                    <h5 class="card-title">Your order has been placed.</h5>
-                    <p class="card-text">Congrats! You are one step closer to making your taste buds very happy. <br>
-                    Come back to this page if you need to make any changes. Have a great day!</p>
+                    <h5 class="card-title">Your order inquiry has been placed.</h5>
+                    <p class="card-text">Congrats! You are one step closer to making your taste buds very happy. <br> 
+                    I will be contacting you shortly.
+                    P.S. Come back to this page if you need to make any changes. Have a great day!</p>
                 </div>
             </div>
         </div>
