@@ -3,15 +3,15 @@
 @section('title')Welcome :)@endsection
 
 @section('content')
-@if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+	@if ($errors->any())
+		<div class="alert alert-danger">
+			<ul>
+				@foreach ($errors->all() as $error)
+					<li>{{ $error }}</li>
+				@endforeach
+			</ul>
+		</div>
+	@endif
 	<div class="row h-100 justify-content-center align-items-center">
 		<div class="text-center">
 			<h1 class="display-1">Cakes By Toni</h1>
@@ -48,14 +48,6 @@
 				</div>
 			</div>
 		</div>
-		<div id="icecream" class="col-3 mx-auto">
-			<div class="image-container">
-				<img src="{{ asset('img/icecream.jpg') }}" class="image img-fluid rounded">
-				<div class="text-container">
-					<a class="lead underline-hover image-text" href="/gallery">Ice Cream</a>
-				</div>
-			</div>
-		</div>
 		<div id="cupcake" class="col-3 mx-auto">
 			<div class="image-container">
 				<img src="https://imgur.com/{{ $cupcakesImage->imgur_id }}.jpg" class="image img-fluid rounded">
@@ -86,56 +78,61 @@
 		</div>
 	</div>
 	<div class="row h-100 justify-content-center align-items-center" id="contact">
-		<div class="text-center">
-			<h1>What do you need?</h1>
+		<div class="row text-center">
+			<h1>Order Inquiry Form</h1>
 		</div>
 		{!! Form::open(array('action' => 'OrderController@new', 'files' => true, 'class' => 'form contact-form col-10')) !!}
-			<div class="form-group">
-				{!! Form::label('firstNameLabel', 'First Name') !!}
-				{!! Form::text('first_name', 'Fuzzy', array('class' => 'form-control')) !!}
+			<div class="row">
+				<div class="form-group col-4">
+					{!! Form::label('firstNameLabel', 'First Name') !!}
+					{!! Form::text('first_name', null, array('class' => 'form-control', 'placeholder' => 'Willy')) !!}
+				</div>
+				<div class="form-group col-4">
+					{!! Form::label('lastNameLabel', 'Last Name') !!}
+					{!! Form::text('last_name', null, array('class' => 'form-control', 'placeholder' => 'Wonka')) !!}
+				</div>
+				<div class="form-group col-4">
+					{!! Form::label('emailLabel', 'E-Mail Address') !!}
+					{!! Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'ww@chocofac.com')) !!}
+				</div>
 			</div>
-			<div class="form-group">
-				{!! Form::label('lastNameLabel', 'Last Name') !!}
-				{!! Form::text('last_name', 'River', array('class' => 'form-control')) !!}
+			<div class="row">
+				<div class="form-group col-8">
+					{!! Form::label('instructionsLabel', 'Special Instructions') !!}
+					{!! Form::textarea('instructions', null, array('class' => 'form-control', 'placeholder' => 'I want a golden goose!')) !!}
+				</div>
+				<div class="col-4">
+					<div class="form-group">
+						{!! Form::label('phoneNumberLabel', 'Phone Number') !!}
+						{!! Form::text('phone_number', null, array('class' => 'form-control', 'placeholder' => '512-555-5555')) !!}
+					</div>
+					<div class="form-group">
+						{!! Form::label('productsLabel', 'What do you want?') !!}
+						<br>
+						{!! 
+							Form::select('product', array(
+								'Cakes' => array('chocolateCake' => 'Chocolate', 'vanillaCake' => 'Vanilla', 'funfettiCake' => 'Funfetti'),
+								'Cookies' => array('chocolateCookies' => 'Chocolate', 'peanutButterCookies' => 'Peanut Butter', 'sugarCookies' => 'Sugar', 'mAndMCookies' => 'M & M'),
+								'Cupcakes' => array('chocolateCupcakes' => 'Chocolate', 'vanillaCupcakes' => 'Vanilla', 'funfettiCupcakes' => 'Funfetti'),
+								'Other'
+							), null, array('class' => 'form-control')) 
+						!!}
+					</div>
+					<div class="form-group">
+						{!! Form::label('dueDateLabel', 'Due Date') !!}
+						{!! Form::date('due_date', \Carbon\Carbon::now(), array('class' => 'form-control')) !!}
+					</div>
+				</div>
 			</div>
-			<div class="form-group">
-				{!! Form::label('emailLabel', 'E-Mail Address') !!}
-				{!! Form::text('email', 'example@gmail.com', array('class' => 'form-control')) !!}
-			</div>
-			<div class="form-group">
-				{!! Form::label('instructionsLabel', 'Instructions') !!}
-				{!! Form::textarea('instructions', 'Instructions', array('class' => 'form-control')) !!}
-			</div>
-			<div class="form-group">
-				{!! Form::label('dueDateLabel', 'Due Date') !!}
-				{!! Form::date('due_date', \Carbon\Carbon::now()) !!}
-			</div>
-			<div class="form-group">
-				{!! Form::label('phoneNumberLabel', 'Phone Number') !!}
-				{!! Form::text('phone_number', 'Phone Number', array('class' => 'form-control')) !!}
-			</div>
-			<div class="form-group">
+			<!-- <div class="form-group">
 				{!! Form::file('image', array('class' => 'form-control-file')) !!}
-			</div>
-			<div class="form-group">
-				{!! Form::label('productsLabel', 'What do you want?') !!}
-				<br>
-				{!! 
-					Form::select('product', array(
-						'Cakes' => array('chocolateCake' => 'Chocolate', 'vanillaCake' => 'Vanilla'),
-						'Cookies' => array('chocolateCookies' => 'Chocolate', 'peanutButterCookies' => 'Peanut Butter', 'sugarCookies' => 'Sugar', 'mAndMCookies' => 'M & M'),
-						'Ice Cream' => array('chocolateIceCream' => 'Chocolate', 'vanillaIceCream' => 'Vanilla', 'mintIceCream' => 'Mint'),
-						'Cupcakes' => array('chocolateCupcakes' => 'Chocolate', 'vanillaCupcakes' => 'Vanilla', 'mintCupcakes' => 'Mint'),
-						'Other'
-					), array('class' => 'form-control')) 
-				!!}
-			</div>
+			</div> -->
 			<!-- <div class="form-group">
 				{!! Form::label('checkboxLabel', 'loremasdadmsdfsasdfsdkdsfk') !!}
 				{!! Form::checkbox('name', '1', array('class' => 'form-check-input')) !!}
 			</div> -->
 			<div class="form-group">
-				{!! Form::submit('Send!', array('class' => 'btn btn-primary')) !!}
+				{!! Form::submit('Send!', array('class' => 'btn btn-success')) !!}
 			</div>
 		{!! Form::close() !!}
 	</div>

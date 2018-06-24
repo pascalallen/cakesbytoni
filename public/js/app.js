@@ -21,7 +21,6 @@ $(window).scroll(function () {
 window.sr = ScrollReveal({ reset: true, duration: 1000 });
 sr.reveal('#cake', { origin: 'left', rotate: { z: 180 }, distance: '20vw', scale: 0.1 });
 sr.reveal('#cookie', { origin: 'bottom', rotate: { z: -180 }, distance: '20vw', scale: 0.1 });
-sr.reveal('#icecream', { origin: 'top', rotate: { z: 180 }, distance: '20vw', scale: 0.1 });
 sr.reveal('#cupcake', { origin: 'right', rotate: { z: -180 }, distance: '20vw', scale: 0.1 });
 
 sr.reveal('#vegan', { origin: 'right', rotate: { z: 180 }, distance: '20vw', scale: 0.1 });
@@ -39,3 +38,7 @@ $(document).on('click', '#edit', function (event) {
 	$('#order-list').hide();
 	$('#order-form').show();
  });
+
+//  var confettiSettings = { target: 'my-canvas' };
+//  var confetti = new ConfettiGenerator(confettiSettings);
+//  confetti.render();

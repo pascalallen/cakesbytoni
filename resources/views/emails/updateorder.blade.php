@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row justify-content-center align-items-center">
                 <div class="text-center">
-                    <h1 class="display-1">Yay a new customer! :)</h1>
+                    <h1 class="display-1">Order Update! :)</h1>
                     <p>Here's the deets:</p>
                     <ul class="list-group w-100 mx-auto">
                         <li class="list-group-item">Name: {{ $order->first_name }} {{ $order->last_name }}</li>

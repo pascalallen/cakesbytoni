@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Order;
 use App\Mail\ThankYou;
 use App\Mail\NewOrder;
+use App\Mail\UpdateOrder;
 use Illuminate\Support\Facades\Mail;
 use Stripe\Error\Card;
 use Cartalyst\Stripe\Stripe;
@@ -71,6 +72,8 @@ class OrderController extends Controller
 		}
 
 		$order->update($request->all());
+
+		Mail::to(env('ADMIN_EMAIL'))->send(new UpdateOrder($order));
 
     	return view('orders.show', ['order' => $order]);
 	}

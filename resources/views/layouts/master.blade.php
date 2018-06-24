@@ -19,6 +19,7 @@
         <script src="{{ asset('js/bootstrap.min.js') }}" type="text/javascript"></script>
         {{-- SCROLL REVEAL --}}
         <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
+        <!-- <script src="node_modules/confetti-js/dist/index.min.js"></script> -->
         <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     </body>
 </html>
