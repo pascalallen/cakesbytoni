@@ -14,7 +14,11 @@
 	@endif
 	<div class="row h-100 justify-content-center align-items-center">
 		<div class="text-center">
-			<h1 class="display-1 pageHeader rounded">Cakes By Toni</h1>
+			<h1>
+				<img src="{{ asset('img/cake1.svg') }}" style="max-width:10%;">
+				Cakes By Toni
+				<img src="{{ asset('img/cake2.svg') }}" style="max-width:10%;">
+			</h1>
 			<nav class="row navbar navbarScroll">
 				<div class="col-3">
 					<a class="lead underline-hover" href="#products">Products</a>
@@ -31,8 +35,8 @@
 			</nav>
 		</div>
 	</div>
-	<div class="row h-100 justify-content-center align-items-center" id="products">
-		<div id="cake" class="col-3 mx-auto">
+	<div class="row justify-content-center align-items-center" id="products">
+		<div id="cake" class="col-md-4 mb-3">
 			<div class="image-container">
 				<img src="https://imgur.com/{{ $cakeImage->imgur_id }}.jpg" class="image img-fluid rounded">
 				<div class="text-container">
@@ -40,7 +44,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="cookie" class="col-3 mx-auto">
+		<div id="cookie" class="col-md-4 mb-3">
 			<div class="image-container">
 				<img src="{{ asset('img/cookie.jpg') }}" class="image img-fluid rounded">
 				<div class="text-container">
@@ -48,7 +52,7 @@
 				</div>
 			</div>
 		</div>
-		<div id="cupcake" class="col-3 mx-auto">
+		<div id="cupcake" class="col-md-4 mb-3">
 			<div class="image-container">
 				<img src="https://imgur.com/{{ $cupcakesImage->imgur_id }}.jpg" class="image img-fluid rounded">
 				<div class="text-container">
@@ -81,27 +85,27 @@
 		<div class="row text-center">
 			<h1>Order Inquiry Form</h1>
 		</div>
-		{!! Form::open(array('action' => 'OrderController@new', 'files' => true, 'class' => 'form contact-form col-10')) !!}
+		{!! Form::open(array('action' => 'OrderController@new', 'files' => true, 'class' => 'form contact-form col-md-10')) !!}
 			<div class="row">
-				<div class="form-group col-4">
+				<div class="form-group col-md-4">
 					{!! Form::label('firstNameLabel', 'First Name') !!}
 					{!! Form::text('first_name', null, array('class' => 'form-control', 'placeholder' => 'Willy')) !!}
 				</div>
-				<div class="form-group col-4">
+				<div class="form-group col-md-4">
 					{!! Form::label('lastNameLabel', 'Last Name') !!}
 					{!! Form::text('last_name', null, array('class' => 'form-control', 'placeholder' => 'Wonka')) !!}
 				</div>
-				<div class="form-group col-4">
+				<div class="form-group col-md-4">
 					{!! Form::label('emailLabel', 'E-Mail Address') !!}
 					{!! Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'ww@chocofac.com')) !!}
 				</div>
 			</div>
 			<div class="row">
-				<div class="form-group col-8">
+				<div class="form-group col-md-8">
 					{!! Form::label('instructionsLabel', 'Special Instructions') !!}
 					{!! Form::textarea('instructions', null, array('class' => 'form-control', 'placeholder' => 'I want a golden goose!')) !!}
 				</div>
-				<div class="col-4">
+				<div class="col-md-4">
 					<div class="form-group">
 						{!! Form::label('phoneNumberLabel', 'Phone Number') !!}
 						{!! Form::text('phone_number', null, array('class' => 'form-control', 'placeholder' => '512-555-5555')) !!}
