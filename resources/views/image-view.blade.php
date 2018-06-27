@@ -3,9 +3,9 @@
 @section('title'){{ $image->name }} :)@endsection
 
 @section('content')
-    <div class="row justify-content-center align-items-center">
+    <div class="row justify-content-center align-items-center navContainer">
 		<div class="text-center">
-			<nav class="row navbar fixed-top">
+			<nav class="row navbar navbarStyle fixed-top">
 				<div class="col-3">
 					<a class="lead underline-hover" href="/#products">Products</a>
 				</div>
@@ -22,10 +22,13 @@
 		</div>
 	</div>
 	<div class="row justify-content-center align-items-center">
-        <div class="col mx-auto">
-            <div class="image-container">
-                <img src="https://imgur.com/{{ $image->imgur_id }}.jpg" class="img-fluid">
-            </div>
-        </div>
+		<div class="col-md-4 mb-3">
+			<div class="image-container">
+				<img src="https://imgur.com/{{ $image->imgur_id }}.jpg" class="image img-fluid image-padding">
+				<div class="text-container">
+					<a class="lead underline-hover image-text" href="gallery/{{ $image->id }}">{{ preg_replace("/\d+$/", "", $image->name) }}</a>
+				</div>
+			</div>
+		</div>
 	</div>
 @endsection

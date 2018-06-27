@@ -1,17 +1,17 @@
 body {
 	font-family: 'Amatic SC', cursive;
-	color: #E7ECEF;
+	color: #f5e9e2;
 	height: 100%;
    	/*background-image: url("/img/memphis-colorful.png");*/
-	background-color: #6096BA;
+	background-color: #b76e79;
 	/*font-family: 'Sacramento', cursive;*/
 	/*font-family: 'Cabin Sketch', cursive;*/
   font-size: 3vmin;
 }
 
-.navbarScroll {
+.navbarStyle {
   border-top-style: solid;
-  border-top-color: #a3cef1;
+  border-top-color: #f5e9e2;
   padding-left: 2.5%;
   padding-right: 2.5%;
 }
@@ -27,12 +27,12 @@ body {
 
 .underline-hover {
   position: relative;
-  color: #E7ECEF;
+  color: #f5e9e2;
   text-decoration: none;
 }
 
 .underline-hover:hover {
-  color: #E7ECEF;
+  color: #f5e9e2;
   text-decoration: none;
 }
 
@@ -43,7 +43,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #E7ECEF;
+  background-color: #f5e9e2;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -95,11 +95,6 @@ body {
 .icon{
 	width: 10%;
 	height: 10%;
-}
-
-#contact-form{
-	background-color: #274c77;
-	padding: 5%;
 }
 
 .cursor-pointer {
