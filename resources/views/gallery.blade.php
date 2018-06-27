@@ -5,7 +5,7 @@
 @section('content')
     <div class="row justify-content-center align-items-center navContainer">
 		<div class="text-center">
-			<nav class="row navbar fixed-top">
+			<nav class="row navbar navbarStyle fixed-top">
 				<div class="col-3">
 					<a class="lead underline-hover" href="/#products">Products</a>
 				</div>
@@ -18,12 +18,12 @@
 				<div class="col-3">
 					<a class="lead underline-hover" href="/gallery">Gallery</a>
 				</div>
-            </nav>
+			</nav>
 		</div>
 	</div>
-	<div class="row h-100 justify-content-center align-items-center">
+	<div class="row justify-content-center align-items-center">
         @foreach($images as $image)
-            <div class="col-3 mx-auto">
+            <div class="col-md-4 mb-3">
                 <div class="image-container">
                     <img src="https://imgur.com/{{ $image->imgur_id }}.jpg" class="image img-fluid image-padding">
                     <div class="text-container">

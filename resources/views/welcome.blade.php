@@ -15,19 +15,19 @@
 	<div class="row h-100 justify-content-center align-items-center">
 		<div class="text-center">
 			<h1>
-				<img src="{{ asset('img/cake1.svg') }}" style="max-width:10%;">
+				<i class="fas fa-birthday-cake fa-xs"></i>
 				Cakes By Toni
-				<img src="{{ asset('img/cake2.svg') }}" style="max-width:10%;">
+				<i class="fas fa-birthday-cake fa-xs"></i>
 			</h1>
-			<nav class="row navbar navbarScroll">
+			<nav class="row navbar navbarStyle navbarScroll">
 				<div class="col-3">
-					<a class="lead underline-hover" href="#products">Products</a>
+					<a class="lead underline-hover" href="/#products">Products</a>
 				</div>
 				<div class="col-3">
-					<a class="lead underline-hover" href="#about">About</a>
+					<a class="lead underline-hover" href="/#about">About</a>
 				</div>
 				<div class="col-3">
-					<a class="lead underline-hover" href="#contact">Contact</a>
+					<a class="lead underline-hover" href="/#contact">Contact</a>
 				</div>
 				<div class="col-3">
 					<a class="lead underline-hover" href="/gallery">Gallery</a>
@@ -63,19 +63,19 @@
 	</div>
 	<div class="row h-100 justify-content-center align-items-center" id="about">
 		<div class="text-center">
-			<div class="row" id="vegan" style="background-color: #274c77;">
+			<div class="row" id="vegan" style="background-color: #773344;">
 				<h1 class="col-6">Vegan</h1>
 				<img src="{{ asset('img/cow.svg') }}" class="col-6 icon">
 			</div>
-			<div class="row" id="gmo" style="background-color: #a3cef1;">
+			<div class="row" id="gmo" style="background-color: #e3b5a4;">
 				<img src="{{ asset('img/gmo.svg') }}" class="col-6 icon">
 				<h1 class="col-6">GMO free</h1>
 			</div>
-			<div class="row" id="gluten" style="background-color: #274c77;">
+			<div class="row" id="gluten" style="background-color: #773344;">
 				<h1 class="col-6">Gluten free</h1>
 				<img src="{{ asset('img/gluten.svg') }}" class="col-6 icon">
 			</div>
-			<div class="row" id="organic" style="background-color: #a3cef1;">
+			<div class="row" id="organic" style="background-color: #e3b5a4;">
 				<img src="{{ asset('img/organic.svg') }}" class="col-6 icon">
 				<h1 class="col-6">Organic</h1>
 			</div>
@@ -136,7 +136,7 @@
 				{!! Form::checkbox('name', '1', array('class' => 'form-check-input')) !!}
 			</div> -->
 			<div class="form-group">
-				{!! Form::submit('Send!', array('class' => 'btn btn-success')) !!}
+				{!! Form::submit('Send!', array('class' => 'btn')) !!}
 			</div>
 		{!! Form::close() !!}
 	</div>
