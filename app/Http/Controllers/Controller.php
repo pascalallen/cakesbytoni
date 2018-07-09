@@ -20,11 +20,11 @@ class Controller extends BaseController
 
     public function gallery(){
         $images = Image::all();
-        return view('gallery', ['images' => $images]);
+        return view('gallery', compact('images'));
     }
 
     public function imageView($id){
         $image = Image::find($id);
-        return view('image-view', ['image' => $image]);
+        return view('image-view', compact('image'));
     }
 }
