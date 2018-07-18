@@ -75,7 +75,7 @@
 	</div>
 	<div class="row h-100 justify-content-center align-items-center" id="contact">
 		<div class="text-center">
-			<h1>What do you need?</h1>
+			<h1>Get a quote:</h1>
 		</div>
 		{!! Form::open(array('action' => 'OrderController@new', 'files' => true, 'class' => 'form contact-form col-10')) !!}
 			<div class="form-group">
