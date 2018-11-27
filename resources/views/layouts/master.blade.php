@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Cabin+Sketch|Sacramento" rel="stylesheet">
         <script src="{{ asset('js/fontawesome-all.min.js') }}" type="text/javascript"></script>
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
         <canvas id="my-canvas"></canvas> 
@@ -21,6 +21,6 @@
         {{-- SCROLL REVEAL --}}
         <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
         <script src="{{ asset('js/confetti-js/dist/index.min.js') }}" type="text/javascript"></script>
-        <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+        <script src="{{ asset('js/main.js') }}" type="text/javascript"></script>
     </body>
 </html>
