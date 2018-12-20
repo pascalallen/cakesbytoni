@@ -3,7 +3,7 @@ body {
 	color: #f5e9e2;
 	height: 100%;
    	/*background-image: url("/img/memphis-colorful.png");*/
-	background-color: #b76e79;
+	/* background-color: #b76e79; */
 	/*font-family: 'Sacramento', cursive;*/
 	/*font-family: 'Cabin Sketch', cursive;*/
   font-size: 3vmin;
@@ -99,4 +99,10 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+#banner-logo {
+  background-image: url(/img/ToniMarie-01.svg);
+  background-size: cover;
+  background-position: center;
 }

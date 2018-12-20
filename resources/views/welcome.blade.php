@@ -3,6 +3,7 @@
 @section('title')Welcome :)@endsection
 
 @section('content')
+	{{-- Validation errors --}}
 	@if ($errors->any())
 		<div class="alert alert-danger">
 			<ul>
@@ -12,8 +13,9 @@
 			</ul>
 		</div>
 	@endif
-	<div class="row h-100 justify-content-center align-items-center">
-		<div class="text-center">
+	{{-- Top banner --}}
+	<div class="row h-100 justify-content-center align-items-center" id="banner-logo">
+		{{-- <div class="text-center">
 			<h1>
 				<i class="fas fa-birthday-cake fa-xs"></i>
 				Cakes By Toni
@@ -33,8 +35,9 @@
 					<a class="lead underline-hover" href="/gallery">Gallery</a>
 				</div>
 			</nav>
-		</div>
+		</div> --}}
 	</div>
+	{{-- Product thumbnails --}}
 	<div class="row justify-content-center align-items-center" id="products">
 		<div id="cake" class="col-md-4 mb-3">
 			<div class="image-container">
@@ -61,6 +64,7 @@
 			</div>
 		</div>
 	</div>
+	{{-- About --}}
 	<div class="row h-100 justify-content-center align-items-center" id="about">
 		<div class="text-center">
 			<div class="row" id="vegan" style="background-color: #773344;">
@@ -81,6 +85,7 @@
 			</div>
 		</div>
 	</div>
+	{{-- Contact form --}}
 	<div class="row h-100 justify-content-center align-items-center" id="contact">
 		<div class="row text-center">
 			<h1>Order Inquiry Form</h1>
@@ -128,13 +133,6 @@
 					</div>
 				</div>
 			</div>
-			<!-- <div class="form-group">
-				{!! Form::file('image', array('class' => 'form-control-file')) !!}
-			</div> -->
-			<!-- <div class="form-group">
-				{!! Form::label('checkboxLabel', 'loremasdadmsdfsasdfsdkdsfk') !!}
-				{!! Form::checkbox('name', '1', array('class' => 'form-check-input')) !!}
-			</div> -->
 			<div class="form-group">
 				{!! Form::submit('Send!', array('class' => 'btn')) !!}
 			</div>
