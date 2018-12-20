@@ -26,7 +26,7 @@
 			<div class="image-container">
 				<img src="https://imgur.com/{{ $image->imgur_id }}.jpg" class="image img-fluid image-padding">
 				<div class="text-container">
-					<a class="lead underline-hover image-text" href="gallery/{{ $image->id }}">{{ preg_replace("/\d+$/", "", $image->name) }}</a>
+					<a class="lead underline-hover image-text" href="/gallery/{{ $image->id }}">{{ preg_replace("/\d+$/", "", $image->name) }}</a>
 				</div>
 			</div>
 		</div>
