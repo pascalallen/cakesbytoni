@@ -14,29 +14,7 @@
 		</div>
 	@endif
 	{{-- Top banner --}}
-	<div class="row h-100 justify-content-center align-items-center" id="banner-logo">
-		{{-- <div class="text-center">
-			<h1>
-				<i class="fas fa-birthday-cake fa-xs"></i>
-				Cakes By Toni
-				<i class="fas fa-birthday-cake fa-xs"></i>
-			</h1>
-			<nav class="row navbar navbarStyle navbarScroll">
-				<div class="col-3">
-					<a class="lead underline-hover" href="/#products">Products</a>
-				</div>
-				<div class="col-3">
-					<a class="lead underline-hover" href="/#about">About</a>
-				</div>
-				<div class="col-3">
-					<a class="lead underline-hover" href="/#contact">Contact</a>
-				</div>
-				<div class="col-3">
-					<a class="lead underline-hover" href="/gallery">Gallery</a>
-				</div>
-			</nav>
-		</div> --}}
-	</div>
+	<div class="row h-100 justify-content-center align-items-center" id="banner-logo"></div>
 	{{-- Product thumbnails --}}
 	<div class="row justify-content-center align-items-center" id="products">
 		<div id="cake" class="col-md-4 mb-3">
