@@ -42,7 +42,7 @@
 	</div>
 	{{-- About --}}
 	<div class="row h-100 justify-content-center align-items-center">
-		<div class="text-center w-50">
+		<div class="text-center">
 			<div class="row">
 				<h1 class="col-6">Vegan</h1>
 				<img src="{{ asset('img/cow.svg') }}" class="col-6 icon">
