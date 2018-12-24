@@ -13,9 +13,8 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function home(){
-        $cakeImage = Image::where([['category_id', 1],['main', 1]])->first();
-        $cupcakesImage = Image::where([['category_id', 2],['main', 1]])->first();
-        return view('welcome', ['cakeImage' => $cakeImage, 'cupcakesImage' => $cupcakesImage]);
+        $images = Image::where('main', 1)->get();
+        return view('welcome', ['images' => $images]);
     }
 
     public function gallery(){
