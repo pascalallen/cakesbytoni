@@ -16,58 +16,54 @@
 	{{-- Top banner --}}
 	<div class="row h-100 justify-content-center align-items-center" id="banner-logo"></div>
 	{{-- Product thumbnails --}}
-	<div class="row justify-content-center align-items-center" id="products">
-		<div id="cake" class="col-md-4 mb-3">
-			<div class="image-container">
-				<img src="https://imgur.com/{{ $cakeImage->imgur_id }}.jpg" class="image img-fluid rounded">
-				<div class="text-container">
-					<a class="lead underline-hover image-text" href="/gallery">Cakes</a>
-				</div>
+	<div class="row justify-content-center align-items-center">
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<ol class="carousel-indicators">
+				@foreach ($images as $key => $value)
+					<li data-target="#carouselExampleIndicators" data-slide-to="{{$key}}" class="@if ($loop->first) active @endif"></li>
+				@endforeach
+			</ol>
+			<div class="carousel-inner">
+				@foreach ($images as $image)
+					<div class="carousel-item @if ($loop->first) active @endif">
+						<img class="d-block w-100" src="https://i.imgur.com/{{$image->imgur_id}}.jpg">
+					</div>
+				@endforeach
 			</div>
-		</div>
-		<div id="cookie" class="col-md-4 mb-3">
-			<div class="image-container">
-				<img src="{{ asset('img/cookie.jpg') }}" class="image img-fluid rounded">
-				<div class="text-container">
-					<a class="lead underline-hover image-text" href="/gallery">Cookies</a>
-				</div>
-			</div>
-		</div>
-		<div id="cupcake" class="col-md-4 mb-3">
-			<div class="image-container">
-				<img src="https://imgur.com/{{ $cupcakesImage->imgur_id }}.jpg" class="image img-fluid rounded">
-				<div class="text-container">
-					<a class="lead underline-hover image-text" href="/gallery">Cupcakes</a>
-				</div>
-			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
 		</div>
 	</div>
 	{{-- About --}}
-	<div class="row h-100 justify-content-center align-items-center" id="about">
-		<div class="text-center">
-			<div class="row" id="vegan" style="background-color: #773344;">
+	<div class="row h-100 justify-content-center align-items-center">
+		<div class="text-center w-50">
+			<div class="row">
 				<h1 class="col-6">Vegan</h1>
 				<img src="{{ asset('img/cow.svg') }}" class="col-6 icon">
 			</div>
-			<div class="row" id="gmo" style="background-color: #e3b5a4;">
+			<div class="row">
 				<img src="{{ asset('img/gmo.svg') }}" class="col-6 icon">
 				<h1 class="col-6">GMO free</h1>
 			</div>
-			<div class="row" id="gluten" style="background-color: #773344;">
+			<div class="row">
 				<h1 class="col-6">Gluten free</h1>
 				<img src="{{ asset('img/gluten.svg') }}" class="col-6 icon">
 			</div>
-			<div class="row" id="organic" style="background-color: #e3b5a4;">
+			<div class="row">
 				<img src="{{ asset('img/organic.svg') }}" class="col-6 icon">
 				<h1 class="col-6">Organic</h1>
 			</div>
 		</div>
 	</div>
 	{{-- Contact form --}}
-	<div class="row h-100 justify-content-center align-items-center" id="contact">
-		<div class="row text-center">
-			<h1>Order Inquiry Form</h1>
-		</div>
+	<div class="row h-100 justify-content-center align-items-center">
+		<h1>Order Inquiry</h1>
 		{!! Form::open(array('action' => 'OrderController@new', 'files' => true, 'class' => 'form contact-form col-md-10')) !!}
 			<div class="row">
 				<div class="form-group col-md-4">

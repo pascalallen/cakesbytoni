@@ -3,24 +3,6 @@
 @section('title')Thanks! :)@endsection
 
 @section('content')
-    <div class="row justify-content-center align-items-center navContainer">    
-		<div class="text-center">
-			<nav class="row navbar navbarStyle fixed-top">
-				<div class="col-3">
-					<a class="lead underline-hover" href="/#products">Products</a>
-				</div>
-				<div class="col-3">
-					<a class="lead underline-hover" href="/#about">About</a>
-				</div>
-				<div class="col-3">
-					<a class="lead underline-hover" href="/#contact">Contact</a>
-				</div>
-				<div class="col-3">
-					<a class="lead underline-hover" href="/gallery">Gallery</a>
-				</div>
-            </nav>
-        </div>
-    </div>
     <div class="text-center">
         <h1>Thank You :)</h1>
         <div class="card mx-auto bg-success mt-5 fixed-top" style="max-width: 18rem;">

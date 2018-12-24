@@ -12,7 +12,6 @@
         <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <canvas id="my-canvas"></canvas> 
         <div class="container">
             @yield('content')
         </div>
