@@ -3,6 +3,7 @@
 @section('title')Welcome :)@endsection
 
 @section('content')
+	<div id="react"></div>
 	{{-- Validation errors --}}
 	@if ($errors->any())
 		<div class="alert alert-danger">
