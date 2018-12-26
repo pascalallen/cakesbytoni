@@ -25,8 +25,6 @@ use Validator;
 /**
  * OrderController
  * 
- * PHP version 7.2.11
- * 
  * @category Controllers
  * @package  Controllers
  * @author   Pascal Allen <pascal.allen88@gmail.com>

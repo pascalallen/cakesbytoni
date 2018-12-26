@@ -21,8 +21,6 @@ use App\Image;
 /**
  * Controller
  * 
- * PHP version 7.2.11
- * 
  * @category Controllers
  * @package  Controllers
  * @author   Pascal Allen <pascal.allen88@gmail.com>
