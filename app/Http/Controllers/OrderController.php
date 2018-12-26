@@ -1,5 +1,15 @@
 <?php
-
+/**
+ * Controller to manage orders
+ * 
+ * PHP version 7.2.11
+ * 
+ * @category Controllers
+ * @package  Controllers
+ * @author   Pascal Allen <pascal.allen88@gmail.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @link     http://cakesbytoni.com
+ */
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -12,44 +22,62 @@ use Stripe\Error\Card;
 use Cartalyst\Stripe\Stripe;
 use Validator;
 
+/**
+ * OrderController
+ * 
+ * PHP version 7.2.11
+ * 
+ * @category Controllers
+ * @package  Controllers
+ * @author   Pascal Allen <pascal.allen88@gmail.com>
+ * @license  MIT https://opensource.org/licenses/MIT
+ * @link     http://cakesbytoni.com
+ */
 class OrderController extends Controller
 {
+    /**
+     * Creates new Order
+     *
+     * @param Request $request request from page
+     * 
+     * @return void
+     */
     public function new(Request $request)
     {
-		$validator = Validator::make($request->all(), [
-			'first_name' => 'required',
-			'email' => 'required',
-			'due_date' => 'required',
-			'product' => 'required',
-		]);
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required',
+            'email' => 'required',
+            'due_date' => 'required',
+            'product' => 'required',
+        ]);
 
         if ($validator->fails()) {
-			return redirect()
-				->action('Controller@home')
-				->withErrors($validator)
-				->withInput();
+            return redirect()
+                ->action('Controller@home')
+                ->withErrors($validator)
+                ->withInput();
         }
-		
-		$order = new Order();
-		$order->first_name = $request->first_name;
-		$order->last_name = $request->last_name;
-		$order->email = $request->email;
-		$order->instructions = $request->instructions;
-		$order->due_date = $request->due_date;
-		$order->phone_number = $request->phone_number;
-		$order->price = 0;
-		$order->image = $request->image;
-		$order->product = $request->product;
-		$order->completed = 0;
-		$order->unique_id = uniqid();
-		$order->save();
 
-		// Mail::to($request->email)->send(new ThankYou($order));
-		Mail::to(env('ADMIN_EMAIL'))->send(new NewOrder($order));
-		
-		return redirect()->action(
-			'OrderController@find', ['uniqid' => $order->unique_id]
-		);
+        $order = new Order();
+        $order->first_name = $request->first_name;
+        $order->last_name = $request->last_name;
+        $order->email = $request->email;
+        $order->instructions = $request->instructions;
+        $order->due_date = $request->due_date;
+        $order->phone_number = $request->phone_number;
+        $order->price = 0;
+        $order->image = $request->image;
+        $order->product = $request->product;
+        $order->completed = 0;
+        $order->unique_id = uniqid();
+        $order->save();
+
+        // Mail::to($request->email)->send(new ThankYou($order));
+        Mail::to(env('ADMIN_EMAIL'))->send(new NewOrder($order));
+
+        return redirect()->action(
+        'OrderController@find', ['uniqid' => $order->unique_id]
+        );
 	}
 
     public function find($uniqid)
