@@ -15,9 +15,3 @@ Route::get('/', 'Controller@home');
 Route::post('/', 'OrderController@new');
 Route::get('/orders/{uniqid}', 'OrderController@find'); // show
 Route::post('/orders/{uniqid}', 'OrderController@update'); // update
-// Route::get('checkout', 'OrderController@getCheckout'); // checkout landing
-// Route::post('checkout', 'OrderController@postCheckout'); // checkout post
-Route::prefix('gallery')->group(function () {
-    Route::get('', 'Controller@gallery');
-    Route::get('{id}', 'Controller@imageView');
-});
