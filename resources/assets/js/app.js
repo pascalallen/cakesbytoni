@@ -10,6 +10,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
-import Master from './components/Master';
+import HomePage from './components/HomePage';
 
-render(<Master />, document.getElementById('react'));
+render(
+  <Router history={browserHistory}>
+    <Route path="/" component={HomePage}></Route>
+  </Router>, 
+  document.getElementById('react')
+);
