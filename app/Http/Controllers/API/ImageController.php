@@ -18,7 +18,7 @@ use App\Http\Controllers\Controller;
 use App\Image;
 
 /**
- * ImagesController
+ * ImageController
  * 
  * @category Controllers
  * @package  Controllers
@@ -26,7 +26,7 @@ use App\Image;
  * @license  MIT https://opensource.org/licenses/MIT
  * @link     http://cakesbytoni.com
  */
-class ImagesController extends Controller
+class ImageController extends Controller
 {
     /**
      * Display a listing of the resource.

@@ -22,7 +22,7 @@ use App\Mail\NewOrder;
 use App\Mail\UpdateOrder;
 
 /**
- * OrdersController
+ * OrderController
  * 
  * @category Controllers
  * @package  Controllers
@@ -30,7 +30,7 @@ use App\Mail\UpdateOrder;
  * @license  MIT https://opensource.org/licenses/MIT
  * @link     http://cakesbytoni.com
  */
-class OrdersController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.

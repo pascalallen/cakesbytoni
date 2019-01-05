@@ -1,34 +1,12 @@
-import PropTypes from 'prop-types';
-import { lifecycle, compose } from 'recompose';
-// import { StyledHomePage } from './styles';
-import Banner from 'components/Banner';
-import Carousel from 'components/Carousel';
-import About from 'components/About';
-import OrderForm from 'components/OrderForm';
+import React from 'react';
+import { connect } from 'react-redux';
 
-const HomePage = ({
-  homeData,
-}) => (
+class HomePage extends React.Component {
+  render() {
+    return (
+      <div>test</div>
+    );
+  }
+}
 
-);
-
-HomePage.propTypes = {
-  homeData: PropTypes.shape({}).isRequired,
-};
-
-HomePage.defaultProps = {
-  // 
-};
-
-const withDataOnLoad = lifecycle({
-  componentDidMount() {
-    const {
-      fetchHomeData,
-    } = this.props;
-    fetchHomeData();
-  },
-});
-
-export default compose(
-  withDataOnLoad,
-)(HomePage);
+export default connect()(HomePage);

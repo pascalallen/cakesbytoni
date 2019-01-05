@@ -17,6 +17,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('images', 'API\ImagesController');
-Route::apiResource('orders', 'API\OrdersController');
-// Route::apiResource('categories', 'API\CategoriesController');
+Route::apiResource('images', 'API\ImageController');
+Route::apiResource('orders', 'API\OrderController');
+// Route::apiResource('categories', 'API\CategoryController');

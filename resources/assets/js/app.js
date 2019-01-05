@@ -7,14 +7,22 @@
 
 require('./bootstrap');
 import React from 'react';
-import { render } from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route } from 'react-router-dom'
+import store from './store';
 
 import HomePage from './components/HomePage';
+// import Overview from './components/Overview';
+// import Show from './components/Show';
 
-render(
-  <Router history={browserHistory}>
-    <Route path="/" component={HomePage}></Route>
-  </Router>, 
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <Route path="/" component={HomePage}></Route>
+      {/* <Route path="/:resource" component={Overview}></Route> */}
+      {/* <Route path="/:resource/:slug" component={Show}></Route> */}
+    </BrowserRouter>
+  </Provider>, 
   document.getElementById('react')
 );
