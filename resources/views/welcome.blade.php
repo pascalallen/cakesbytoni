@@ -62,7 +62,7 @@
 		</div>
 	</div>
 	{{-- Contact form --}}
-	<div class="row h-100 justify-content-center align-items-center">
+	{{-- <div class="row h-100 justify-content-center align-items-center">
 		<h1>Order Inquiry</h1>
 		{!! Form::open(array('action' => 'OrderController@new', 'files' => true, 'class' => 'form contact-form col-md-10')) !!}
 			<div class="row">
@@ -111,5 +111,5 @@
 				{!! Form::submit('Send!', array('class' => 'btn')) !!}
 			</div>
 		{!! Form::close() !!}
-	</div>
+	</div> --}}
 @endsection
