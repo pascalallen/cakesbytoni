@@ -22,11 +22,12 @@ class Overview extends React.Component {
   }
 
   componentDidMount() {
-      this.props.fetchDataList(this.props.panelObject.panelSlug);
+    console.log(this.props);
+      // this.props.fetchDataList(this.props.panelObject.panelSlug);
   }
 
   updateTable(state) {
-    this.props.fetchDataList(this.props.panelObject.panelSlug, state);
+    // this.props.fetchDataList(this.props.panelObject.panelSlug, state);
   }
 
   /* eslint-disable no-param-reassign */
@@ -75,6 +76,6 @@ export default connect(
   mapStateToProps,
   {
     fetchUser,
-    fetchDataList,
+    // fetchDataList,
   },
 )(Overview);
