@@ -13,14 +13,14 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import store from './store';
 
 import HomePage from './components/HomePage';
-// import Overview from './components/Overview';
+import Overview from './components/Overview';
 // import Show from './components/Show';
 
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
       <Route path="/" component={HomePage}></Route>
-      {/* <Route path="/:resource" component={Overview}></Route> */}
+      <Route path="/:resource" component={Overview}></Route>
       {/* <Route path="/:resource/:slug" component={Show}></Route> */}
     </BrowserRouter>
   </Provider>, 

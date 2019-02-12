@@ -19,27 +19,14 @@ const mapStateToProps = state => ({
 class Overview extends React.Component {
   constructor(props) {
     super(props);
-    this.updateTable = this.updateTable.bind(this);
-    this.state = {
-      filterContents: {},
-    };
   }
 
-  componentDidUpdate(prevProps) {
-    if (this.props.isDataFetched && prevProps.panelObject.panelSlug !== this.props.panelObject.panelSlug) {
-      // this.props.fetchDataList(this.props.panelObject.panelSlug);
-    }
+  componentDidMount() {
+      this.props.fetchDataList(this.props.panelObject.panelSlug);
   }
 
   updateTable(state) {
-    // TODO: what's this delay about?
-    const delay = 1000;
-    if (state.filtered && state.filtered.length > 0 && state.filtered !== this.state.filterContents) {
-      clearTimeout(this.timer);
-      // this.timer = setTimeout(() => this.props.fetchDataList(this.props.panelObject.panelSlug, state), delay);
-    } else {
-      // this.props.fetchDataList(this.props.panelObject.panelSlug, state);
-    }
+    this.props.fetchDataList(this.props.panelObject.panelSlug, state);
   }
 
   /* eslint-disable no-param-reassign */
@@ -50,38 +37,12 @@ class Overview extends React.Component {
     let renderedItems = [];
 
     if (isDataFetched && Array.isArray(items)) {
-      // Loop over items and replace approved by id with first and last name of actual person
-      renderedItems = items.map((item) => {
-        if (item.approved_by_user) {
-          item.approved_by = `${item.approved_by_user.first_name} ${item.approved_by_user.last_name}`;
-        } else {
-          item.approved_by = '';
-        }
-
-        if (!item.created_by) {
-          item.created_by = `"Legacy ${panelObject.panelSingularName}"`;
-        } else {
-          item.created_by = item.created_by.fullName;
-        }
-
-        return item;
-      });
+      renderedItems = items;
     }
-    /* eslint-enable no-param-reassign */
 
+    /* eslint-enable no-param-reassign */
     return (
-      <MainPage>
-        <h1>{panelObject.panelName} Overview</h1>
-        <div style={{ textAlign: 'right' }}>
-          { panelObject.settings && panelObject.settings.can_create_models &&
-            <Link to={`/${panelObject.panelSlug}/editor`}>
-              <button className="btn btn-primary">
-                New {panelObject.panelSingularName}
-              </button>
-            </Link>
-          }
-        </div>
-        <br />
+      <div>
         <ReactTable
           filterable
           data={renderedItems}
@@ -92,28 +53,18 @@ class Overview extends React.Component {
           onFetchData={this.updateTable}
           className="-striped -highlight"
         />
-      </MainPage>
+      </div>
     );
   }
 }
 
 Overview.propTypes = {
-  // fetchDataList: PropTypes.func.isRequired,
+  fetchDataList: PropTypes.func.isRequired,
   panelObject: PropTypes.shape({
     panelSlug: PropTypes.string,
     panelName: PropTypes.string,
   }).isRequired,
   isDataFetched: PropTypes.bool.isRequired,
-  params: PropTypes.shape({
-    loading: PropTypes.bool,
-    from: PropTypes.number,
-    to: PropTypes.number,
-    total: PropTypes.number,
-    totalErrors: PropTypes.number,
-    newQuestions: PropTypes.number,
-    currentPage: PropTypes.number,
-    totalPages: PropTypes.number,
-  }).isRequired,
   items: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object,
@@ -124,6 +75,6 @@ export default connect(
   mapStateToProps,
   {
     fetchUser,
-    // fetchDataList,
+    fetchDataList,
   },
 )(Overview);
