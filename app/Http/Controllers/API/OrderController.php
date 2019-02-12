@@ -21,15 +21,6 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\NewOrder;
 use App\Mail\UpdateOrder;
 
-/**
- * OrderController
- * 
- * @category Controllers
- * @package  Controllers
- * @author   Pascal Allen <pascal.allen88@gmail.com>
- * @license  MIT https://opensource.org/licenses/MIT
- * @link     http://cakesbytoni.com
- */
 class OrderController extends Controller
 {
     /**
@@ -62,10 +53,9 @@ class OrderController extends Controller
         );
 
         if ($validator->fails()) {
-            response()->json(
-                ['errors' => $validator->getMessageBag()->toArray()], 
-                Response::HTTP_BAD_REQUEST
-            );
+            response()->json([
+                'errors' => $validator->getMessageBag()->toArray(),
+            ], Response::HTTP_BAD_REQUEST);
         }
 
         $order = new Order();
@@ -138,8 +128,8 @@ class OrderController extends Controller
             return response()->json([], Response::HTTP_NOT_FOUND);
         }
 
-        $order->delete();
+        $result = $order->delete();
 
-        return response()->json([], Response::HTTP_OK);
+        return response()->json($result, Response::HTTP_OK);
     }
 }

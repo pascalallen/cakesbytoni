@@ -17,15 +17,6 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use App\Image;
 
-/**
- * ImageController
- * 
- * @category Controllers
- * @package  Controllers
- * @author   Pascal Allen <pascal.allen88@gmail.com>
- * @license  MIT https://opensource.org/licenses/MIT
- * @link     http://cakesbytoni.com
- */
 class ImageController extends Controller
 {
     /**
@@ -102,8 +93,8 @@ class ImageController extends Controller
             return response()->json([], Response::HTTP_NOT_FOUND);
         }
 
-        $image->delete();
+        $result = $image->delete();
 
-        return response()->json([], Response::HTTP_OK);
+        return response()->json($result, Response::HTTP_OK);
     }
 }
