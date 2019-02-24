@@ -9,18 +9,22 @@ require('./bootstrap');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import store from './store';
 
 import HomePage from './components/HomePage';
 import Overview from './components/Overview';
-// import Show from './components/Show';
+import Show from './components/Show';
 
 ReactDOM.render(
-  <Router>
-    <Route exact path="/" component={HomePage}></Route>
-    <Route exact path="/:resource" component={Overview}></Route>
-    {/* <Route path="/:resource/:slug" component={Show}></Route> */}
-  </Router>, 
+  <Provider store={store}>
+    <Router>
+      <div>
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/:resource" component={Overview} />
+        {/* <Route path="/:resource/:slug" component={Show}></Route> */}
+      </div>
+    </Router>
+  </Provider>, 
   document.getElementById('react')
 );

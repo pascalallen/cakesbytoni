@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function(){
-    return view('layouts.master');
-});
+Route::view('/{path?}', 'welcome')
+     ->where('path', '.*')
+     ->name('react');

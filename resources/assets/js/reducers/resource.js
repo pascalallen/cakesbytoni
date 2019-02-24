@@ -1,7 +1,7 @@
 import * as constants from '../constants';
 
 export default function reducer(state = {
-  data: {},
+  data: null,
   params: {
     pages: -1,
     pageSize: 5,
@@ -16,7 +16,7 @@ export default function reducer(state = {
       return {
         ...state,
         fetching: true,
-        data: {},
+        data: [],
         params: { ...state.params, loading: true },
       };
     }

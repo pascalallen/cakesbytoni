@@ -19,15 +19,13 @@ use App\Image;
 
 class ImageController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function index(Request $request): \Illuminate\Contracts\Pagination\LengthAwarePaginator
     {
-        $images = Image::all();
-        return response()->json($images, Response::HTTP_OK);
+        $pageSize = $request->get('pageSize', 20);
+        
+        return Image::distinct()
+            ->paginate($pageSize);
     }
 
     /**

@@ -10,10 +10,10 @@ import { fetchAll } from '../../actions/resource';
 import structure from './structures';
 
 const mapStateToProps = state => ({
-  user: state.user.user,
-  items: state.dataList.data,
-  isDataFetched: state.dataList.fetched,
-  params: state.dataList.params,
+  data: state.resource.data,
+  fetched: state.resource.fetched,
+  params: state.resource.params,
+  // user: state.user.user,
 });
 
 class Overview extends React.Component {
@@ -22,32 +22,28 @@ class Overview extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props);
-      // this.props.fetchDataList(this.props.panelObject.panelSlug);
+    this.props.fetchAll(this.props.match.params.resource);
   }
 
-  updateTable(state) {
-    // this.props.fetchDataList(this.props.panelObject.panelSlug, state);
-  }
-
-  /* eslint-disable no-param-reassign */
   render() {
     const {
-      items, isDataFetched, params, panelObject,
+      data, fetched, params,
     } = this.props;
-    let renderedItems = [];
 
-    if (isDataFetched && Array.isArray(items)) {
-      renderedItems = items;
+    let renderedData = [];
+
+    if (fetched && Array.isArray(data)) {
+      renderedData = data.map((item) => {
+        return item;
+      });
     }
 
-    /* eslint-enable no-param-reassign */
     return (
       <div>
         <ReactTable
           filterable
-          data={renderedItems}
-          columns={structure(panelObject.panelSlug)}
+          data={renderedData}
+          columns={structure(this.props.match.params.resource)}
           manual
           pages={params.pages}
           loading={params.loading} // Display the loading overlay when we need it
@@ -60,22 +56,19 @@ class Overview extends React.Component {
 }
 
 Overview.propTypes = {
-  fetchDataList: PropTypes.func.isRequired,
-  panelObject: PropTypes.shape({
-    panelSlug: PropTypes.string,
-    panelName: PropTypes.string,
-  }).isRequired,
-  isDataFetched: PropTypes.bool.isRequired,
-  items: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-  ]).isRequired,
+  fetchAll: PropTypes.func.isRequired,
+  // panelObject: PropTypes.shape({
+  //   panelSlug: PropTypes.string,
+  //   panelName: PropTypes.string,
+  // }).isRequired,
+  // isDataFetched: PropTypes.bool.isRequired,
+  data: PropTypes.array,
 };
 
 export default connect(
   mapStateToProps,
   {
     fetchUser,
-    // fetchDataList,
+    fetchAll,
   },
 )(Overview);
