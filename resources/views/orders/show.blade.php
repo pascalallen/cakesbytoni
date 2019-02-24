@@ -6,7 +6,7 @@
     <div class="text-center">
         <h1>Thank You :)</h1>
         <div class="card mx-auto bg-success mt-5 fixed-top" style="max-width: 18rem;">
-            <div class="card-header">Success!<span class="float-right clickable cursor-pointer" id="card" data-effect="fadeOut"><i class="fa fa-times"></i></span></div>
+            <div class="card-header">Success!<span class="float-right" style="cursor: pointer;" id="card"><i class="fa fa-times"></i></span></div>
             <div class="card-body">
                 <h5 class="card-title">Your order inquiry has been placed.</h5>
                 <p class="card-text">Congrats! You are one step closer to making your taste buds very happy. <br> 

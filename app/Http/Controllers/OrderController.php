@@ -21,6 +21,8 @@ use Illuminate\Support\Facades\Mail;
 use Stripe\Error\Card;
 use Cartalyst\Stripe\Stripe;
 use Validator;
+use GuzzleHttp\Client;
+use Illuminate\Http\Response;
 
 /**
  * OrderController
@@ -42,14 +44,13 @@ class OrderController extends Controller
      */
     public function new(Request $request)
     {
-        $validator = Validator::make(
-            $request->all(), [
-                'first_name' => 'required',
-                'email' => 'required',
-                'due_date' => 'required',
-                'product' => 'required',
-            ]
-        );
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'required',
+            'email' => 'required',
+            'due_date' => 'required',
+            'product' => 'required',
+            'recaptcha_token' => 'required',
+        ]);
 
         if ($validator->fails()) {
             return redirect()
@@ -58,25 +59,40 @@ class OrderController extends Controller
                 ->withInput();
         }
 
-        $order = new Order();
-        $order->first_name = $request->first_name;
-        $order->last_name = $request->last_name;
-        $order->email = $request->email;
-        $order->instructions = $request->instructions;
-        $order->due_date = $request->due_date;
-        $order->phone_number = $request->phone_number;
-        $order->price = 0;
-        $order->image = $request->image;
-        $order->product = $request->product;
-        $order->completed = 0;
-        $order->unique_id = uniqid();
-        $order->save();
+        $client = new Client([
+            'base_uri' => 'https://www.google.com/recaptcha/api/',
+        ]);
+        
+        $r = $client->request('POST', 'siteverify', [
+            'form_params' => [
+                'secret' => env('RECAPTCHA_SECRET'),
+                'response' => $request->recaptcha_token,
+            ]
+        ]);
 
-        Mail::to(env('ADMIN_EMAIL'))->send(new NewOrder($order));
+        if ($r->getStatusCode() === Response::HTTP_OK) {
+            $order = new Order();
+            $order->first_name = $request->first_name;
+            $order->last_name = $request->last_name;
+            $order->email = $request->email;
+            $order->instructions = $request->instructions;
+            $order->due_date = $request->due_date;
+            $order->phone_number = $request->phone_number;
+            $order->price = 0;
+            $order->image = $request->image;
+            $order->product = $request->product;
+            $order->completed = 0;
+            $order->unique_id = uniqid();
+            $order->save();
+    
+            Mail::to(env('ADMIN_EMAIL'))->send(new NewOrder($order));
+    
+            return redirect()->action(
+                'OrderController@find', ['uniqid' => $order->unique_id]
+            );
+        }
 
-        return redirect()->action(
-            'OrderController@find', ['uniqid' => $order->unique_id]
-        );
+        return redirect()->action('Controller@home');
     }
 
     /**

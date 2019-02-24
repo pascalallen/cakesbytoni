@@ -62,7 +62,7 @@
 		</div>
 	</div>
 	{{-- Contact form --}}
-	{{-- <div class="row h-100 justify-content-center align-items-center">
+	<div class="row h-100 justify-content-center align-items-center">
 		<h1>Order Inquiry</h1>
 		{!! Form::open(array('action' => 'OrderController@new', 'files' => true, 'class' => 'form contact-form col-md-10')) !!}
 			<div class="row">
@@ -108,8 +108,17 @@
 				</div>
 			</div>
 			<div class="form-group">
+				{!! Form::hidden('recaptcha_token', null, array('id' => 'recaptcha_token_field')) !!}
 				{!! Form::submit('Send!', array('class' => 'btn')) !!}
 			</div>
 		{!! Form::close() !!}
-	</div> --}}
+	</div>
+	<script src="https://www.google.com/recaptcha/api.js?render=6LdUeJAUAAAAADKljQ8Bs2AecFr1DRbl9onFwoHt"></script>
+  <script>
+		grecaptcha.ready(function() {
+				grecaptcha.execute('6LdUeJAUAAAAADKljQ8Bs2AecFr1DRbl9onFwoHt', {action: 'homepage'}).then(function(token) {
+					$('#recaptcha_token_field').val(token);
+				});
+		});
+  </script>
 @endsection
