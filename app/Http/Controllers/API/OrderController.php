@@ -23,15 +23,13 @@ use App\Mail\UpdateOrder;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    
+    public function index(Request $request): \Illuminate\Contracts\Pagination\LengthAwarePaginator
     {
-        $orders = Order::all();
-        return response()->json($orders, Response::HTTP_OK);
+        $pageSize = $request->get('pageSize', 20);
+        
+        return Order::distinct()
+            ->paginate($pageSize);
     }
 
     /**

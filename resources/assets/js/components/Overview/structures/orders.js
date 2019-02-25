@@ -22,7 +22,7 @@ import matchSorter from 'match-sorter';
       Header: 'ID',
       accessor: 'id',
       width: 50,
-      Cell: id => (<Link to={`/images/${id.value}`}>{id.value}</Link>),
+      Cell: id => (<Link to={`/orders/${id.value}`}>{id.value}</Link>),
       filterMethod: (filter, rows) =>
         matchSorter(rows, filter.value, { keys: ['id'] }),
       filterAll: true,
@@ -30,51 +30,41 @@ import matchSorter from 'match-sorter';
     {
       Header: 'First Name',
       accessor: 'first_name',
-      width: 100,
     },
     {
       Header: 'Last Name',
       accessor: 'last_name',
-      width: 100,
     },
     {
       Header: 'Email',
       accessor: 'email',
-      width: 100,
     },
     {
       Header: 'Product',
       accessor: 'product',
-      width: 100,
     },
     {
       Header: 'Due Date',
       accessor: 'due_date',
-      width: 100,
     },
     {
       Header: 'Phone Number',
       accessor: 'phone_number',
-      width: 100,
     },
     {
       Header: 'Price',
       accessor: 'price',
-      width: 50,
     },
     {
       Header: 'Completed',
       accessor: 'completed',
-      width: 50,
     },
     {
       Header: 'Created At',
       accessor: 'created_at',
-      width: 100,
     },
     {
       Header: 'Updated At',
       accessor: 'created_at',
-      width: 100,
     },
   ];

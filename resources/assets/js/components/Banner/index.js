@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import { StyledBanner } from './styles';
+import { CenterRow } from './styles';
 
 class Banner extends Component {
   render(){
     return (
-      <StyledBanner/>
+      <CenterRow>
+        <img src="/img/ToniMarie-01.svg" width="100%" />
+      </CenterRow>
     )
   }
 }

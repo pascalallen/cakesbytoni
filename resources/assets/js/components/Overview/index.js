@@ -57,12 +57,12 @@ class Overview extends React.Component {
 
 Overview.propTypes = {
   fetchAll: PropTypes.func.isRequired,
-  // panelObject: PropTypes.shape({
-  //   panelSlug: PropTypes.string,
-  //   panelName: PropTypes.string,
-  // }).isRequired,
-  // isDataFetched: PropTypes.bool.isRequired,
-  data: PropTypes.array,
+  fetched: PropTypes.bool.isRequired,
+  data: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
+  params: PropTypes.object.isRequired,
 };
 
 export default connect(

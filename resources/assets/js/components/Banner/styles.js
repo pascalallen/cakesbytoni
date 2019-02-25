@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { Row } from 'react-bootstrap';
 
-export const StyledBanner = styled.div`
-  background-image: url(/img/ToniMarie-01.svg);
-  background-size: cover;
-  background-position: center;
+export const CenterRow = styled(Row)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;

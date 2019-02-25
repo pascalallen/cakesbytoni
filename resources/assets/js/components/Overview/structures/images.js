@@ -15,26 +15,21 @@ export default [
   {
     Header: 'Name',
     accessor: 'name',
-    width: 100,
   },
   {
     Header: 'Slug',
     accessor: 'slug',
-    width: 50,
   },
   {
     Header: 'Main',
     accessor: 'main',
-    width: 50,
   },
   {
     Header: 'Created At',
     accessor: 'created_at',
-    width: 100,
   },
   {
     Header: 'Updated At',
     accessor: 'created_at',
-    width: 100,
   },
 ];
