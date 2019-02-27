@@ -1,4 +1,22 @@
 import styled from 'styled-components';
+import { Row, Col,  } from 'react-bootstrap';
 
-export const StyledAbout = styled.div`
+export const CenterRow = styled(Row)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const IconCol = styled(Col)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+
+export const TextCol = styled(Col)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 `;

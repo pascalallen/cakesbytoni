@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
-import { Link } from 'react-router-dom';
 import { fetchUser } from '../../actions/user';
 import { fetchAll } from '../../actions/resource';
 
