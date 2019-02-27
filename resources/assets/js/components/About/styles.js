@@ -1,10 +1,12 @@
 import styled from 'styled-components';
-import { Row, Col,  } from 'react-bootstrap';
+import { Row, Col} from 'react-bootstrap';
 
-export const CenterRow = styled(Row)`
-  display: flex;
+export const MainRow = styled(Row)`
+  // display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
+  height: 100%;
 `;
 
 export const IconCol = styled(Col)`

@@ -99547,31 +99547,14 @@ function (_Component) {
   _createClass(About, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Row"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["TextCol"], {
-        sm: 6
-      }, "Vegan"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["IconCol"], {
-        sm: 6
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/img/cow.svg"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["IconCol"], {
-        sm: 6
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/img/gmo.svg"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["TextCol"], {
-        sm: 6
-      }, "GMO free"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["TextCol"], {
-        sm: 6
-      }, "Gluten free"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["IconCol"], {
-        sm: 6
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/img/gluten.svg"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["IconCol"], {
-        sm: 6
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "/img/organic.svg"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["TextCol"], {
-        sm: 6
-      }, "Organic"));
+      return (// <Row>
+        //   <TextCol sm={6}>Vegan</TextCol><IconCol sm={6}><img src="/img/cow.svg" /></IconCol>
+        //   <IconCol sm={6}><img src="/img/gmo.svg" /></IconCol><TextCol sm={6}>GMO free</TextCol>
+        //   <TextCol sm={6}>Gluten free</TextCol><IconCol sm={6}><img src="/img/gluten.svg" /></IconCol>
+        //   <IconCol sm={6}><img src="/img/organic.svg" /></IconCol><TextCol sm={6}>Organic</TextCol>
+        // </Row>  
+        react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["MainRow"], null, "test")
+      );
     }
   }]);
 
@@ -99586,12 +99569,12 @@ function (_Component) {
 /*!********************************************************!*\
   !*** ./resources/assets/js/components/About/styles.js ***!
   \********************************************************/
-/*! exports provided: CenterRow, IconCol, TextCol */
+/*! exports provided: MainRow, IconCol, TextCol */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CenterRow", function() { return CenterRow; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainRow", function() { return MainRow; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "IconCol", function() { return IconCol; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TextCol", function() { return TextCol; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
@@ -99617,7 +99600,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  // display: flex;\n  text-align: center;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -99630,7 +99613,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var CenterRow = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"])(_templateObject());
+var MainRow = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Row"])(_templateObject());
 var IconCol = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"])(_templateObject2());
 var TextCol = Object(styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"])(_templateObject3());
 
