@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-// import { StyledOrderForm } from './styles';
+import { CenterRow } from './styles';
 
 class OrderForm extends Component {
   render(){
     return (
-      <div class="row h-100 justify-content-center align-items-center">
+      <CenterRow>
         <h1>Order Inquiry</h1>
         {!! Form::open(array('action' => 'OrderController@new', 'files' => true, 'class' => 'form contact-form col-md-10')) !!}
           <div class="row">
@@ -53,7 +53,7 @@ class OrderForm extends Component {
             {!! Form::submit('Send!', array('class' => 'btn')) !!}
           </div>
         {!! Form::close() !!}
-      </div>
+      </CenterRow>
     )
   }
 }
