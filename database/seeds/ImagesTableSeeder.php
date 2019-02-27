@@ -13,6 +13,8 @@ class ImagesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('images')->truncate();
+
         Image::insert([
             ['name' => 'Unicorn Cake 0', 'imgur_id' => 'yR8LgqG', 'category_id' => 1, 'slug' => 'unicorn-cake-0', 'main' => 0, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
             ['name' => 'Unicorn Cake 1', 'imgur_id' => 'cwsNKum', 'category_id' => 1, 'slug' => 'unicorn-cake-1', 'main' => 0, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
@@ -38,6 +40,12 @@ class ImagesTableSeeder extends Seeder
             ['name' => 'Wedding Cake 2', 'imgur_id' => 'pyQX6Fk', 'category_id' => 1, 'slug' => 'wedding-cake-2', 'main' => 0, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
             ['name' => 'Wedding Cake 3', 'imgur_id' => '1T2aJr9', 'category_id' => 1, 'slug' => 'wedding-cake-3', 'main' => 1, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
             ['name' => 'Wedding Cake 4', 'imgur_id' => 'iqJmqQb', 'category_id' => 1, 'slug' => 'wedding-cake-4', 'main' => 0, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
+            ['name' => 'Dragon + Unicorn Cake', 'imgur_id' => 'a8NKtgT', 'category_id' => 1, 'slug' => 'dragon-unicorn-cake-0', 'main' => 1, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
+            ['name' => 'Dragon + Unicorn Cake', 'imgur_id' => 'Zz6eTEf', 'category_id' => 1, 'slug' => 'dragon-unicorn-cake-1', 'main' => 1, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
+            ['name' => 'Dragon + Unicorn Cake', 'imgur_id' => 'WwdaFez', 'category_id' => 1, 'slug' => 'dragon-unicorn-cake-2', 'main' => 1, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
+            ['name' => 'Dragon + Unicorn Cake', 'imgur_id' => '77IWQo6', 'category_id' => 1, 'slug' => 'dragon-unicorn-cake-3', 'main' => 0, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
+            ['name' => 'Dragon + Unicorn Cake', 'imgur_id' => 'AknQnGk', 'category_id' => 1, 'slug' => 'dragon-unicorn-cake-4', 'main' => 1, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
+            ['name' => 'Dragon + Unicorn Cake', 'imgur_id' => '2zCYD5l', 'category_id' => 1, 'slug' => 'dragon-unicorn-cake-5', 'main' => 0, 'created_at' => Carbon::now()->format('Y-m-d H:i:s')],
         ]);
     }
 }
