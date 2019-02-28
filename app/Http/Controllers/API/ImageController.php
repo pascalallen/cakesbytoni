@@ -22,10 +22,13 @@ class ImageController extends Controller
 
     public function index(Request $request): \Illuminate\Contracts\Pagination\LengthAwarePaginator
     {
-        $pageSize = $request->get('pageSize', 20);
-        
-        return Image::distinct()
-            ->paginate($pageSize);
+        $pageSize = $request->get('page_size', 20);
+
+        if ($request->has('random')) {
+            return Image::distinct()->inRandomOrder()->paginate($pageSize);
+        }
+
+        return Image::distinct()->paginate($pageSize);
     }
 
     /**
