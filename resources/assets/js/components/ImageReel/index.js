@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { StyledImage, StyledDiv } from './styles';
+import { StyledImage, StyledDiv, ImageText } from './styles';
 import { fetchAll } from '../../actions/resource';
 
 const mapStateToProps = state => ({
@@ -26,13 +26,22 @@ class ImageReel extends Component {
       data, fetched,
     } = this.props;
 
+    const key_points = [
+      'Vegan',
+      'Non-GMO',
+      'Gluten-Free',
+      'Organic',
+    ];
+
     return (
       <StyledDiv>
         {fetched && data.map((item, i) => (
           <StyledImage
             key={i}
             src={`https://i.imgur.com/${item.imgur_id}.jpg`}
-          />
+          >
+            <ImageText>{key_points[i]}</ImageText>
+          </StyledImage>
         ))}
       </StyledDiv>
     )
