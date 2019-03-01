@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Banner from '../Banner';
-// import About from '../About';
 import ImageReel from '../ImageReel';
-// import OrderForm from '../OrderForm';
+import About from '../About';
+import OrderForm from '../OrderForm';
 
 class HomePage extends React.Component {
   render() {
@@ -11,8 +11,8 @@ class HomePage extends React.Component {
       <div>
         <Banner />
         <ImageReel />
-        {/* <About /> */}
-        {/* <OrderForm /> */}
+        <About />
+        <OrderForm />
       </div>
     );
   }

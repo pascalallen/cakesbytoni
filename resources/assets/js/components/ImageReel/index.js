@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { CenterRow, StyledImage } from './styles';
+import { StyledImage, StyledDiv } from './styles';
 import { fetchAll } from '../../actions/resource';
-import {Image} from 'react-bootstrap';
 
 const mapStateToProps = state => ({
   data: state.resource.data,
@@ -27,23 +26,15 @@ class ImageReel extends Component {
       data, fetched,
     } = this.props;
 
-    let renderedData = [];
-
-    if (fetched && Array.isArray(data)) {
-      renderedData = data.map((item) => {
-        return item;
-      });
-    }
-
     return (
-      <div>
-        {renderedData && renderedData.map((item, i) => (
+      <StyledDiv>
+        {fetched && data.map((item, i) => (
           <StyledImage
             key={i}
             src={`https://i.imgur.com/${item.imgur_id}.jpg`}
           />
         ))}
-      </div>
+      </StyledDiv>
     )
   }
 }

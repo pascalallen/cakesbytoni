@@ -1,11 +1,4 @@
 import styled from 'styled-components';
-import { Row , Image} from 'react-bootstrap';
-
-export const CenterRow = styled(Row)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 
 export const StyledImage = styled.div`
   position: relative;
@@ -21,4 +14,10 @@ export const StyledImage = styled.div`
   &:hover {
     filter: none;
   }
+`;
+
+export const StyledDiv = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
