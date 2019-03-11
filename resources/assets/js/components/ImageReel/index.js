@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { StyledImage, StyledDiv, ImageText } from './styles';
+import { StyledImage, StyledDiv, ImageText, StyledLink } from './styles';
 import { fetchAll } from '../../actions/resource';
 
 const mapStateToProps = state => ({
@@ -43,6 +43,7 @@ class ImageReel extends Component {
             <ImageText>{key_points[i]}</ImageText>
           </StyledImage>
         ))}
+        <StyledLink href="/images">See More</StyledLink>
       </StyledDiv>
     )
   }

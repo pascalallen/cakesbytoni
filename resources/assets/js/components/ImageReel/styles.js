@@ -36,7 +36,11 @@ export const StyledImage = styled.div`
 `;
 
 export const StyledDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  height: 100%;
+`;
+
+export const StyledLink = styled.a`
+  font-weight: 700;
+  font-style: italic;
 `;

@@ -99571,7 +99571,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StyledDiv", function() { return StyledDiv; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -99729,7 +99729,9 @@ function (_Component) {
           key: i,
           src: "https://i.imgur.com/".concat(item.imgur_id, ".jpg")
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["ImageText"], null, key_points[i]));
-      }));
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["StyledLink"], {
+        href: "/images"
+      }, "See More"));
     }
   }]);
 
@@ -99751,7 +99753,7 @@ ImageReel.propTypes = {
 /*!************************************************************!*\
   !*** ./resources/assets/js/components/ImageReel/styles.js ***!
   \************************************************************/
-/*! exports provided: ImageText, StyledImage, StyledDiv */
+/*! exports provided: ImageText, StyledImage, StyledDiv, StyledLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99759,9 +99761,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ImageText", function() { return ImageText; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StyledImage", function() { return StyledImage; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StyledDiv", function() { return StyledDiv; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StyledLink", function() { return StyledLink; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n  font-weight: 700;\n  font-style: italic;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  text-align: center;\n  height: 100%;\n"]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -99798,6 +99811,7 @@ var StyledImage = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(
   return props.src;
 });
 var StyledDiv = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div(_templateObject3());
+var StyledLink = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].a(_templateObject4());
 
 /***/ }),
 
@@ -99850,22 +99864,32 @@ function (_Component) {
   _createClass(OrderForm, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["StyledDiv"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
-        controlId: "formBasicFirstName"
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["StyledDiv"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
+        method: "POST",
+        className: "form col-md-8"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+        controlId: "formBasicFirstName",
+        className: "col-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "First Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
-        controlId: "formBasicLastName"
+        controlId: "formBasicLastName",
+        className: "col-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Last Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
-        controlId: "formBasicEmail"
+        controlId: "formBasicEmail",
+        className: "col-md-4"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
         type: "email"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Text, {
         className: "text-muted"
       }, "We'll never share your email with anyone else."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
-        controlId: "formBasicInstructions"
+        controlId: "formBasicInstructions",
+        className: "col-md-8"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Special Instructions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
         as: "textarea",
-        rows: "3"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+        cols: "50",
+        rows: "11  "
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        md: 4
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
         controlId: "formBasicPhone"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Phone Number"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
         type: "number"
@@ -99877,62 +99901,12 @@ function (_Component) {
         controlId: "formBasicDate"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Due Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
         type: "date"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
         controlId: "formBasicSubmit"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
         variant: "primary",
         type: "submit"
-      }, "Submit")))) // <CenterRow>
-      //   <h1>Order Inquiry</h1>
-      //   {!! Form::open(array('action' => 'OrderController@new', 'files' => true, 'class' => 'form contact-form col-md-10')) !!}
-      //     <div class="row">
-      //       <div class="form-group col-md-4">
-      //         {!! Form::label('firstNameLabel', 'First Name') !!}
-      //         {!! Form::text('first_name', null, array('class' => 'form-control', 'placeholder' => 'Willy')) !!}
-      //       </div>
-      //       <div class="form-group col-md-4">
-      //         {!! Form::label('lastNameLabel', 'Last Name') !!}
-      //         {!! Form::text('last_name', null, array('class' => 'form-control', 'placeholder' => 'Wonka')) !!}
-      //       </div>
-      //       <div class="form-group col-md-4">
-      //         {!! Form::label('emailLabel', 'E-Mail Address') !!}
-      //         {!! Form::text('email', null, array('class' => 'form-control', 'placeholder' => 'ww@chocofac.com')) !!}
-      //       </div>
-      //     </div>
-      //     <div class="row">
-      //       <div class="form-group col-md-8">
-      //         {!! Form::label('instructionsLabel', 'Special Instructions') !!}
-      //         {!! Form::textarea('instructions', null, array('class' => 'form-control', 'placeholder' => 'I want a golden goose!')) !!}
-      //       </div>
-      //       <div class="col-md-4">
-      //         <div class="form-group">
-      //           {!! Form::label('phoneNumberLabel', 'Phone Number') !!}
-      //           {!! Form::text('phone_number', null, array('class' => 'form-control', 'placeholder' => '512-555-5555')) !!}
-      //         </div>
-      //         <div class="form-group">
-      //           {!! Form::label('productsLabel', 'What do you want?') !!}
-      //           <br>
-      //           {!! 
-      //             Form::select('product', array(
-      //               'Cakes' => array('chocolateCake' => 'Chocolate', 'vanillaCake' => 'Vanilla', 'funfettiCake' => 'Funfetti'),
-      //               'Cookies' => array('chocolateCookies' => 'Chocolate', 'peanutButterCookies' => 'Peanut Butter', 'sugarCookies' => 'Sugar', 'mAndMCookies' => 'M & M'),
-      //               'Cupcakes' => array('chocolateCupcakes' => 'Chocolate', 'vanillaCupcakes' => 'Vanilla', 'funfettiCupcakes' => 'Funfetti'),
-      //               'Other'
-      //             ), null, array('class' => 'form-control')) 
-      //           !!}
-      //         </div>
-      //         <div class="form-group">
-      //           {!! Form::label('dueDateLabel', 'Due Date') !!}
-      //           {!! Form::date('due_date', \Carbon\Carbon::now(), array('class' => 'form-control')) !!}
-      //         </div>
-      //       </div>
-      //     </div>
-      //     <div class="form-group">
-      //       {!! Form::submit('Send!', array('class' => 'btn')) !!}
-      //     </div>
-      //   {!! Form::close() !!}
-      // </CenterRow>
-      ;
+      }, "Submit"))))));
     }
   }]);
 
@@ -99955,7 +99929,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StyledDiv", function() { return StyledDiv; });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n"]);
 
   _templateObject = function _templateObject() {
     return data;
