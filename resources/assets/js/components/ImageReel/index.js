@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { StyledImage, StyledDiv, ImageText, StyledLink } from './styles';
+import { StyledCol, ImageText, StyledRow } from './styles';
 import { fetchAll } from '../../actions/resource';
 
 const mapStateToProps = state => ({
@@ -34,17 +34,17 @@ class ImageReel extends Component {
     ];
 
     return (
-      <StyledDiv>
+      <StyledRow>
         {fetched && data.map((item, i) => (
-          <StyledImage
+          <StyledCol
+            md={4}
             key={i}
             src={`https://i.imgur.com/${item.imgur_id}.jpg`}
           >
             <ImageText>{key_points[i]}</ImageText>
-          </StyledImage>
+          </StyledCol>
         ))}
-        <StyledLink href="/images">See More</StyledLink>
-      </StyledDiv>
+      </StyledRow>
     )
   }
 }

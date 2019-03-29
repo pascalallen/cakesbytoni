@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import {Container} from 'react-bootstrap';
 
-export const StyledHomePage = styled.div`
+export const StyledContainer = styled(Container)`
+  height: 100vh;
 `;

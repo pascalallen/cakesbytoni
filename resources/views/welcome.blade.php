@@ -9,11 +9,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Cakes By Toni - Welcome</title>
         <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
-        <style>
-            body {
-                height: 100%;
-            }
-        </style>
     </head>
     <body>
         <div id="react"></div>

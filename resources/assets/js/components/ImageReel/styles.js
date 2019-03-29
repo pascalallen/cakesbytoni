@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import {Row, Col} from 'react-bootstrap';
 
 export const ImageText = styled.span`
   display: none;
@@ -15,7 +16,7 @@ export const ImageText = styled.span`
   transform: translateY(-50%);
 `;
 
-export const StyledImage = styled.div`
+export const StyledCol = styled(Col)`
   position: relative;
   float: left;
   width:  25%;
@@ -37,6 +38,13 @@ export const StyledImage = styled.div`
 
 export const StyledDiv = styled.div`
   text-align: center;
+  height: 100%;
+`;
+
+export const StyledRow = styled(Row)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 `;
 

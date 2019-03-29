@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
-import { StyledDiv } from './styles';
+import {Col} from 'react-bootstrap';
+import {StyledRow, StyledImage} from './styles';
 
 class Banner extends Component {
   render(){
     return (
-      <StyledDiv>
-        <img src="/img/ToniMarie-01.svg" width="100%" />
-      </StyledDiv>
+      <StyledRow>
+        <Col md={12}>
+          <StyledImage src="/img/ToniMarie-01.svg" />
+        </Col>
+      </StyledRow>
     )
   }
 }
