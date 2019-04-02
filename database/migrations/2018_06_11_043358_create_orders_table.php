@@ -24,7 +24,8 @@ class CreateOrdersTable extends Migration
             $table->string('phone_number')->nullable();
             $table->string('price')->default(0);
             $table->binary('image')->nullable();
-            $table->boolean('completed');
+            $table->boolean('completed')->default(false);
+            $table->string('unique_id');
             $table->timestamps();
         });
     }

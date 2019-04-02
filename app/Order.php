@@ -16,6 +16,9 @@ class Order extends Model
         'phone_number', 
         'due_date', 
         'product', 
-        'instructions'
+        'instructions',
+        'unique_id',
+        'completed',
+        'image',
     ];
 }

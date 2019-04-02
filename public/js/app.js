@@ -99336,13 +99336,14 @@ module.exports = function(module) {
 /*!*************************************************!*\
   !*** ./resources/assets/js/actions/resource.js ***!
   \*************************************************/
-/*! exports provided: fetchSingle, fetchAll */
+/*! exports provided: fetchSingle, fetchAll, newRecord */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchSingle", function() { return fetchSingle; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchAll", function() { return fetchAll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "newRecord", function() { return newRecord; });
 /* harmony import */ var axios_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios/index */ "./node_modules/axios/index.js");
 /* harmony import */ var axios_index__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios_index__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../constants */ "./resources/assets/js/constants.js");
@@ -99353,18 +99354,18 @@ function fetchSingle(component, slug) {
   var params = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
   return function (dispatch) {
     dispatch({
-      type: _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_SINGLE"]
+      type: _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_ALL"]
     });
-    axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(baseUrl, "/").concat(component, "/").concat(slug), {
-      params: params
+    axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.get("".concat(baseUrl, "/").concat(component), {
+      params: optionalParams
     }).then(function (response) {
       dispatch({
-        type: _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_SINGLE_SUCCESS"],
+        type: _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_ALL_SUCCESS"],
         payload: response.data
       });
     }).catch(function (err) {
       dispatch({
-        type: _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_SINGLE_ERROR"],
+        type: _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_ALL_ERROR"],
         payload: err
       });
     });
@@ -99386,6 +99387,25 @@ function fetchAll(component) {
     }).catch(function (err) {
       dispatch({
         type: _constants__WEBPACK_IMPORTED_MODULE_1__["FETCH_ALL_ERROR"],
+        payload: err
+      });
+    });
+  };
+}
+function newRecord(component) {
+  var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  return function (dispatch) {
+    dispatch({
+      type: _constants__WEBPACK_IMPORTED_MODULE_1__["NEW_RECORD"]
+    });
+    axios_index__WEBPACK_IMPORTED_MODULE_0___default.a.post("".concat(baseUrl, "/").concat(component), params).then(function (response) {
+      dispatch({
+        type: _constants__WEBPACK_IMPORTED_MODULE_1__["NEW_RECORD_SUCCESS"],
+        payload: response.data
+      });
+    }).catch(function (err) {
+      dispatch({
+        type: _constants__WEBPACK_IMPORTED_MODULE_1__["NEW_RECORD_ERROR"],
         payload: err
       });
     });
@@ -100039,9 +100059,15 @@ var StyledLink = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].a(_te
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles */ "./resources/assets/js/components/OrderForm/styles.js");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _styles__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./styles */ "./resources/assets/js/components/OrderForm/styles.js");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-bootstrap */ "./node_modules/react-bootstrap/es/index.js");
+/* harmony import */ var _actions_resource__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/resource */ "./resources/assets/js/actions/resource.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -100051,13 +100077,16 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
 
 
 
@@ -100068,55 +100097,124 @@ var OrderForm =
 function (_Component) {
   _inherits(OrderForm, _Component);
 
-  function OrderForm() {
+  function OrderForm(props) {
+    var _this;
+
     _classCallCheck(this, OrderForm);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(OrderForm).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(OrderForm).call(this, props));
+    _this.state = {
+      first_name: '',
+      last_name: '',
+      email: '',
+      instructions: '',
+      phone_number: '',
+      product: 'chocolateCake',
+      due_date: ''
+    };
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(OrderForm, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState(_defineProperty({}, event.target.name, event.target.value));
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(event) {
+      this.props.newRecord('orders', this.state);
+      event.preventDefault();
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_1__["StyledDiv"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
-        method: "POST",
-        className: "form col-md-8"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_styles__WEBPACK_IMPORTED_MODULE_3__["StyledDiv"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"], {
+        className: "form col-md-8",
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
         controlId: "formBasicFirstName",
         className: "col-md-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "First Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, null, "First Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
+        name: "first_name",
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
         controlId: "formBasicLastName",
         className: "col-md-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Last Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, null, "Last Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
+        name: "last_name",
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
         controlId: "formBasicEmail",
         className: "col-md-4"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
-        type: "email"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Text, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, null, "Email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
+        type: "email",
+        name: "email",
+        onChange: this.handleChange
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Text, {
         className: "text-muted"
-      }, "We'll never share your email with anyone else."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+      }, "We'll never share your email with anyone else."))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Row, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
         controlId: "formBasicInstructions",
         className: "col-md-8"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Special Instructions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, null, "Special Instructions"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
         as: "textarea",
         cols: "50",
-        rows: "11  "
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Col"], {
+        rows: "8",
+        name: "instructions",
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Col"], {
         md: 4
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
         controlId: "formBasicPhone"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Phone Number"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
-        type: "number"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, null, "Phone Number"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
+        type: "number",
+        name: "phone_number",
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
         controlId: "formBasicProduct"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "What do you want?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
-        as: "select"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "1"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "2"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "3"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "4"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", null, "5"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, null, "What do you want?"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
+        as: "select",
+        name: "product",
+        onChange: this.handleChange
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("optgroup", {
+        label: "Cakes"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "chocolateCake"
+      }, "Chocolate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "vanillaCake"
+      }, "Vanilla"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "funfettiCake"
+      }, "Funfetti")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("optgroup", {
+        label: "Cookies"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "chocolateCookies"
+      }, "Chocolate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "peanutButterCookies"
+      }, "Peanut Butter"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "sugarCookies"
+      }, "Sugar"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "mAndMCookies"
+      }, "M & M")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("optgroup", {
+        label: "Cupcakes"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "chocolateCupcakes"
+      }, "Chocolate"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "vanillaCupcakes"
+      }, "Vanilla"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "funfettiCupcakes"
+      }, "Funfetti")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: "0"
+      }, "Other"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
         controlId: "formBasicDate"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Label, null, "Due Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Control, {
-        type: "date"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"].Group, {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Label, null, "Due Date"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Control, {
+        type: "date",
+        name: "due_date",
+        onChange: this.handleChange
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Form"].Group, {
         controlId: "formBasicSubmit"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_4__["Button"], {
         variant: "primary",
         type: "submit"
       }, "Submit"))))));
@@ -100126,7 +100224,12 @@ function (_Component) {
   return OrderForm;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (OrderForm);
+OrderForm.propTypes = {
+  newRecord: prop_types__WEBPACK_IMPORTED_MODULE_1___default.a.func.isRequired
+};
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(null, {
+  newRecord: _actions_resource__WEBPACK_IMPORTED_MODULE_5__["newRecord"]
+})(OrderForm));
 
 /***/ }),
 
@@ -100449,7 +100552,7 @@ __webpack_require__.r(__webpack_exports__);
 /*!******************************************!*\
   !*** ./resources/assets/js/constants.js ***!
   \******************************************/
-/*! exports provided: FETCH_SINGLE, FETCH_SINGLE_SUCCESS, FETCH_SINGLE_ERROR, FETCH_ALL, FETCH_ALL_SUCCESS, FETCH_ALL_ERROR, FETCH_USER, FETCH_USER_SUCCESS, FETCH_USER_ERROR */
+/*! exports provided: FETCH_SINGLE, FETCH_SINGLE_SUCCESS, FETCH_SINGLE_ERROR, FETCH_ALL, FETCH_ALL_SUCCESS, FETCH_ALL_ERROR, FETCH_USER, FETCH_USER_SUCCESS, FETCH_USER_ERROR, NEW_RECORD, NEW_RECORD_SUCCESS, NEW_RECORD_ERROR */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100463,6 +100566,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_USER", function() { return FETCH_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_USER_SUCCESS", function() { return FETCH_USER_SUCCESS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FETCH_USER_ERROR", function() { return FETCH_USER_ERROR; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NEW_RECORD", function() { return NEW_RECORD; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NEW_RECORD_SUCCESS", function() { return NEW_RECORD_SUCCESS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NEW_RECORD_ERROR", function() { return NEW_RECORD_ERROR; });
 var FETCH_SINGLE = 'FETCH_SINGLE';
 var FETCH_SINGLE_SUCCESS = 'FETCH_SINGLE_SUCCESS';
 var FETCH_SINGLE_ERROR = 'FETCH_SINGLE_ERROR';
@@ -100472,6 +100578,9 @@ var FETCH_ALL_ERROR = 'FETCH_ALL_ERROR';
 var FETCH_USER = 'FETCH_USER';
 var FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
 var FETCH_USER_ERROR = 'FETCH_USER_ERROR';
+var NEW_RECORD = 'NEW_RECORD';
+var NEW_RECORD_SUCCESS = 'NEW_RECORD_SUCCESS';
+var NEW_RECORD_ERROR = 'NEW_RECORD_ERROR';
 
 /***/ }),
 
@@ -100593,6 +100702,38 @@ function reducer() {
           fetched: true,
           data: action.payload.data,
           params: _params
+        });
+      }
+
+    case _constants__WEBPACK_IMPORTED_MODULE_0__["NEW_RECORD"]:
+      {
+        return _objectSpread({}, state, {
+          fetching: true,
+          data: {},
+          params: _objectSpread({}, state.params, {
+            loading: true
+          })
+        });
+      }
+
+    case _constants__WEBPACK_IMPORTED_MODULE_0__["NEW_RECORD_ERROR"]:
+      {
+        return _objectSpread({}, state, {
+          fetching: false,
+          error: action.payload
+        });
+      }
+
+    case _constants__WEBPACK_IMPORTED_MODULE_0__["NEW_RECORD_SUCCESS"]:
+      {
+        var _params2 = {
+          loading: false
+        };
+        return _objectSpread({}, state, {
+          fetching: false,
+          fetched: true,
+          data: action.payload.data,
+          params: _params2
         });
       }
   }

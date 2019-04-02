@@ -62,6 +62,29 @@ export default function reducer(state = {
         params,
       };
     }
+    case constants.NEW_RECORD: {
+      return {
+        ...state,
+        fetching: true,
+        data: {},
+        params: { ...state.params, loading: true },
+      };
+    }
+    case constants.NEW_RECORD_ERROR: {
+      return { ...state, fetching: false, error: action.payload };
+    }
+    case constants.NEW_RECORD_SUCCESS: {
+      const params = {
+        loading: false,
+      };
+      return {
+        ...state,
+        fetching: false,
+        fetched: true,
+        data: action.payload.data,
+        params,
+      };
+    }
   }
 
   return state;

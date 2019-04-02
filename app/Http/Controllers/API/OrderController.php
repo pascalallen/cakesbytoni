@@ -20,6 +20,7 @@ use App\Order;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewOrder;
 use App\Mail\UpdateOrder;
+use Illuminate\Support\Carbon;
 
 class OrderController extends Controller
 {
@@ -37,7 +38,7 @@ class OrderController extends Controller
      *
      * @param \Illuminate\Http\Request $request POST from form
      * 
-     * @return \Illuminate\Http\Response
+     * @return \Symfony\Component\HttpFoundation\Response|\Illuminate\Contracts\Routing\ResponseFactory
      */
     public function store(Request $request)
     {
@@ -51,28 +52,24 @@ class OrderController extends Controller
         );
 
         if ($validator->fails()) {
-            response()->json([
-                'errors' => $validator->getMessageBag()->toArray(),
-            ], Response::HTTP_BAD_REQUEST);
+            response($validator->getMessageBag()->toArray(), Response::HTTP_BAD_REQUEST);
         }
+        
+        Order::create([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'email' => $request->email,
+            'instructions' => $request->instructions,
+            'due_date' => Carbon::parse($request->due_date),
+            'phone_number' => $request->phone_number,
+            'image' => $request->image,
+            'product' => $request->product,
+            'unique_id' => uniqid(),
+        ]);
 
-        $order = new Order();
-        $order->first_name = $request->first_name;
-        $order->last_name = $request->last_name;
-        $order->email = $request->email;
-        $order->instructions = $request->instructions;
-        $order->due_date = $request->due_date;
-        $order->phone_number = $request->phone_number;
-        $order->price = 0;
-        $order->image = $request->image;
-        $order->product = $request->product;
-        $order->completed = 0;
-        $order->unique_id = uniqid();
-        $order->save();
+        // Mail::to(env('ADMIN_EMAIL'))->send(new NewOrder($order));
 
-        Mail::to(env('ADMIN_EMAIL'))->send(new NewOrder($order));
-
-        return response()->json([], Response::HTTP_OK);
+        return response('', Response::HTTP_OK);
     }
 
     /**
