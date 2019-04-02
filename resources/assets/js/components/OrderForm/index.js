@@ -34,7 +34,7 @@ class OrderForm extends Component {
   render(){
     return (
       <StyledDiv>
-        <Form className="form col-md-8" onSubmit={this.handleSubmit}>
+        <Form method="POST" className="form col-md-8" onSubmit={this.handleSubmit}>
           <Form.Row>
             <Form.Group controlId="formBasicFirstName" className="col-md-4">
               <Form.Label>First Name</Form.Label>
