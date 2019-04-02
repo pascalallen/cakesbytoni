@@ -1,26 +1,16 @@
 <?php
-/**
- * Manages orders
- * 
- * PHP version 7.2.11
- * 
- * @category Controllers
- * @package  Controllers
- * @author   Pascal Allen <pascal.allen88@gmail.com>
- * @license  MIT https://opensource.org/licenses/MIT
- * @link     http://cakesbytoni.com
- */
+
 namespace App\Http\Controllers\API;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
-use Validator;
 use App\Order;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\NewOrder;
 use App\Mail\UpdateOrder;
 use Illuminate\Support\Carbon;
+use App\Http\Requests\NewOrderRequest;
 
 class OrderController extends Controller
 {
@@ -36,25 +26,12 @@ class OrderController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \Illuminate\Http\Request $request POST from form
+     * @param NewOrderRequest $request POST from form
      * 
      * @return \Symfony\Component\HttpFoundation\Response|\Illuminate\Contracts\Routing\ResponseFactory
      */
-    public function store(Request $request)
+    public function store(NewOrderRequest $request)
     {
-        $validator = Validator::make(
-            $request->all(), [
-                'first_name' => 'required',
-                'email' => 'required',
-                'due_date' => 'required',
-                'product' => 'required',
-            ]
-        );
-
-        if ($validator->fails()) {
-            response($validator->getMessageBag()->toArray(), Response::HTTP_BAD_REQUEST);
-        }
-        
         Order::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
